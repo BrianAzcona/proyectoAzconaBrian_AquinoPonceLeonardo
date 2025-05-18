@@ -7,7 +7,11 @@
                     contigo a la brevedad.</p>
                 <form action="/enviar-soporte" method="POST">
                     <div class="form-group mb-3 text-start">
-                        <label for="nombre" class="form-label fw-semibold" style="color: black">Nombre Completo:</label>
+                        <label for="apellido" class="form-label fw-semibold" style="color: black">Apellido:</label>
+                        <input type=" text" id="apellido" name="apellido" class="form-control" required>
+                    </div>
+                    <div class="form-group mb-3 text-start">
+                        <label for="nombre" class="form-label fw-semibold" style="color: black">Nombre:</label>
                         <input type=" text" id="nombre" name="nombre" class="form-control" required>
                     </div>
                     <div class="form-group mb-3 text-start">
@@ -17,35 +21,17 @@
                     </div>
                     <div class="form-group mb-3 text-start">
                         <label for="asunto" class="form-label fw-semibold" style="color: black">Asunto:</label>
-                        <select id="asunto" name="asunto" class="form-select" required>
-                            <option value="">Selecciona un asunto</option>
-                            <option value="problema_compra">Problema con una compra</option>
-                            <option value="duda_juego">Duda sobre un juego</option>
-                            <option value="problema_tecnico">Problema técnico con la plataforma</option>
-                            <option value="consulta_cuenta">Consulta sobre mi cuenta</option>
-                            <option value="reembolso">Solicitud de reembolso</option>
-                            <option value="otro">Otro asunto</option>
-                        </select>
+                        <input type="asunto" id="asunto" name="asunto" class="form-control" required>
                     </div>
                     <div class="form-group mb-3 text-start">
-                        <label for="orden_id" class="form-label fw-semibold" style="color: black">Número de Orden
-                            (opcional):</label>
-                        <input type="text" id="orden_id" name="orden_id" class="form-control">
-                        <small class="form-text text-muted">Si tu consulta está relacionada con una compra, incluye el
-                            número de orden.</small>
+                        <label for="numeroOrden" class="form-label fw-semibold" style="color: black">Número de
+                            orden(opcional):</label>
+                        <input type="numeroOrden" id="numeroOrden" name="numeroOrden" class="form-control" required>
                     </div>
                     <div class="form-group mb-3 text-start">
-                        <label for="plataforma" class="form-label fw-semibold" style="color: black">Plataforma
-                            (opcional):</label>
-                        <select id="plataforma" name="plataforma" class="form-select">
-                            <option value="">Selecciona la plataforma</option>
-                            <option value="pc">PC</option>
-                            <option value="playstation">PlayStation</option>
-                            <option value="xbox">Xbox</option>
-                            <option value="nintendo_switch">Nintendo Switch</option>
-                            <option value="movil">Móvil</option>
-                            <option value="otro">Otro</option>
-                        </select>
+                        <label for="plataforma" class="form-label fw-semibold"
+                            style="color: black">Plataforma(opcional):</label>
+                        <input type="plataforma" id="plataforma" name="plataforma" class="form-control" required>
                     </div>
                     <div class="form-group mb-4 text-start">
                         <label for="mensaje" class="form-label fw-semibold" style="color: black">Descripción del
