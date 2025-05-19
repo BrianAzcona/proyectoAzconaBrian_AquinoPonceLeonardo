@@ -32,7 +32,8 @@
     <link rel="stylesheet" href="assets/css/infoContecto.css">
     <link rel="stylesheet" href="assets/css/estiloProductos.css">
     <link rel="stylesheet" href="assets/css/menuCategorias.css">
-
+    <link rel="stylesheet" href="assets/css/estilo_inicio.css">
+    <link rel="stylesheet" href="assets/css/estilo_crearcuenta.css">
 
 </head>
 
@@ -40,6 +41,7 @@
 
     <header>
         <div class="header-container container d-flex flex-wrap align-items-center justify-content-between gap-3">
+
             <div class="logo d-flex align-items-center gap-2">
                 <a href="<?php echo base_url('/'); ?>">
                     <img src="assets/img/logo.png" class="img-thumbnail" width="70" height="70"
@@ -56,7 +58,7 @@
             <div class="acciones d-flex align-items-center gap-3">
 
                 <a class="carro-de-compras" href="#"><i class="fas fa-cart-shopping"></i></a>
-                <a class="usuario" href="#"><i class="fas fa-circle-user"></i></a>
+                <a class="usuario" href="<?php echo base_url('inicio'); ?>"><i class="fas fa-circle-user"></i></a>
             </div>
         </div>
     </header>

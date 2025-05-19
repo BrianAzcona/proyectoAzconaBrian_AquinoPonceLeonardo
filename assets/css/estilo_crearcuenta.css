@@ -1,0 +1,105 @@
+.pagina-inicio {
+    background: linear-gradient(135deg, #e0f7fa, #e1f5fe);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .pagina-inicio .container-fluid {
+    padding: 2rem;
+  }
+  
+  /* Tarjeta del formulario */
+  .pagina-inicio .contacto-infor {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    padding: 2.5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 420px;
+  }
+  
+  .pagina-inicio .contacto-infor:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Icono FontAwesome */
+  .pagina-inicio .contacto-infor i {
+    font-size: 4rem;
+    color: blueviolet;
+  }
+  
+  /* Título */
+  .pagina-inicio .contacto-infor h3 {
+    color: blueviolet;
+    font-weight: 700;
+    font-size: 1.75rem;
+  }
+  
+  /* Texto descriptivo */
+  .pagina-inicio .contacto-infor p {
+    color: #6c757d;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Labels de formulario */
+  .pagina-inicio .form-label {
+    color: #000;
+    font-weight: 600;
+  }
+  
+  /* Inputs */
+  .pagina-inicio .form-control {
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+  
+  /* Botones */
+  .pagina-inicio .btn-primary {
+    background-color: blueviolet;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pagina-inicio .btn-primary:hover {
+    background-color: #7a34d6; /* tono más oscuro */
+  }
+  
+  /* Enlaces */
+  .pagina-inicio .contacto-infor a {
+    color: blueviolet;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  .pagina-inicio .contacto-infor a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive: pantallas pequeñas */
+  @media (max-width: 576px) {
+    .pagina-inicio .contacto-infor {
+      padding: 1.5rem;
+      margin: 1rem;
+    }
+  
+    .pagina-inicio .contacto-infor i {
+      font-size: 3rem;
+    }
+  
+    .pagina-inicio .btn-primary {
+      font-size: 0.95rem;
+    }
+  
+    .pagina-inicio .form-control {
+      font-size: 0.9rem;
+    }
+  }
+   

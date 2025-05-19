@@ -34,4 +34,14 @@ class Home extends BaseController
         $data['titulo'] = "terminos de Uso";
         return view('plantillas/header_view.php', $data).view("plantillas/nav_view.php").view("contenido/terminosyusos.php").view("plantillas/footer_view.php");
     }
-}
+    
+     public function inicio(): string {
+        $data['titulo'] = "Inicio";
+        return view('plantillas/header_view.php', $data).view("plantillas/nav_view.php").view("contenido/inicio.php").view("plantillas/footer_view.php");
+    }
+
+    public function crearcuenta(): string {
+        $data['titulo'] = "CrearCueenta ";
+        return view('plantillas/header_view.php', $data).view("plantillas/nav_view.php").view("contenido/crearcuenta.php").view("plantillas/footer_view.php");
+    }
+} 

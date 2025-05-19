@@ -1,0 +1,102 @@
+.pagina-inicio {
+    background: linear-gradient(135deg, #e0f7fa, #e1f5fe);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .pagina-inicio .container-fluid {
+    padding: 2rem;
+  }
+  
+  /* Tarjeta del formulario */
+  .pagina-inicio .contacto-infor {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 2.5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .pagina-inicio .contacto-infor:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Ícono superior */
+  .pagina-inicio .contacto-infor i {
+    font-size: 4rem;
+    color: blueviolet;
+  }
+  
+  /* Título */
+  .pagina-inicio .titulo-morado {
+    color: blueviolet;
+    font-weight: 700;
+  }
+  
+  /* Texto inferior del encabezado */
+  .pagina-inicio .contacto-infor p {
+    color: #6c757d;
+    font-size: 1rem;
+  }
+  
+  /* Etiquetas */
+  .pagina-inicio .form-label {
+    color: #000;
+    font-weight: 600;
+  }
+  
+  /* Campos de entrada */
+  .pagina-inicio .form-control {
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+  
+  /* Botón principal */
+  .pagina-inicio .btn-primary {
+    background-color: blueviolet;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover del botón */
+  .pagina-inicio .btn-primary:hover {
+    background-color: #7a34d6;
+  }
+  
+  /* Botón tipo enlace (crear cuenta) */
+  .pagina-inicio .btn-primary[href] {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 0.75rem;
+  }
+  
+  /* Responsive */
+  @media (max-width: 576px) {
+    .pagina-inicio .contacto-infor {
+      padding: 1.5rem;
+      margin: 1rem;
+    }
+  
+    .pagina-inicio .contacto-infor i {
+      font-size: 3rem;
+    }
+  
+    .pagina-inicio .btn-primary {
+      font-size: 0.95rem;
+    }
+  
+    .pagina-inicio .form-control {
+      font-size: 0.9rem;
+    }
+  }
+   
