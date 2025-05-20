@@ -39,11 +39,39 @@
                         Contraseña:</label>
                     <input type="password" id="confirm-password" name="confirm-password" class="form-control" required>
                 </div>
+                <!-- País -->
+                <div class="form-group mb-3">
+                    <label for="pais" class="form-label fw-semibold" style="color: black;">País:</label>
+                    <input type="text" id="pais" name="pais" class="form-control" required>
+                </div>
+
+                <!-- Provincia -->
+                <div class="form-group mb-3">
+                    <label for="provincia" class="form-label fw-semibold" style="color: black;">Provincia:</label>
+                    <input type="text" id="provincia" name="provincia" class="form-control" required>
+                </div>
+
+                <!-- Ciudad -->
+                <div class="form-group mb-3">
+                    <label for="ciudad" class="form-label fw-semibold" style="color: black;">Ciudad:</label>
+                    <input type="text" id="ciudad" name="ciudad" class="form-control" required>
+                </div>
+
+                <!-- Teléfono -->
+                <div class="form-group mb-3">
+                    <label for="telefono" class="form-label fw-semibold" style="color: black;">Teléfono:</label>
+                    <input type="text" id="telefono" name="telefono" class="form-control" required>
+                </div>
+
+                <!-- Perfil ID oculto -->
+                <input type="hidden" name="perfil_id" value="2">
+
                 <!-- Botón Crear Cuenta -->
                 <button type="submit" class="btn btn-primary fw-bold w-100">Crear Cuenta</button>
             </form>
             <p class="text-center mt-3">¿Ya tienes una cuenta?
-                <a href="/login" class="text-primary" style="color: blueviolet;">Inicia sesión aquí</a>
+                <a href="<?php echo base_url('inicio'); ?>" class="text-primary" style="color: blueviolet;">Inicia
+                    sesión aquí</a>
             </p>
         </div>
     </div>
