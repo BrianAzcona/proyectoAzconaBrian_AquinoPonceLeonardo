@@ -69,7 +69,7 @@
   
   /* Hover del botón */
   .pagina-inicio .btn-primary:hover {
-    background-color: #7a34d6;
+    background-color: #ffffff;
   }
   
   /* Botón tipo enlace (crear cuenta) */
@@ -78,6 +78,7 @@
     text-align: center;
     text-decoration: none;
     margin-top: 0.75rem;
+    color: #ffffff;
   }
   
   /* Responsive */
