@@ -25,4 +25,4 @@ class Perfil_Model extends Model
     protected $validationRules      = [];
     protected $validationMessages   = [];
     protected $skipValidation       = false;
-}
+} 
