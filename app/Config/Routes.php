@@ -19,6 +19,4 @@ $routes->get('Ayuda', 'Home::terminosYcondiciones');
 
 $routes->get('inicio', 'Home::inicio');
 
-//$routes->get('crearcuenta', 'Home::crearcuenta'); 
-
 $routes->match(['get', 'post'], 'crearCuenta', 'ClienteController::agregarCliente');

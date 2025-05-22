@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use app\Models\ClienteModel;
+use App\Models\ClienteModel;
 
 class ClienteController extends BaseController
 {
@@ -12,7 +12,10 @@ class ClienteController extends BaseController
     {
         if (! $this->request->is('post')) {
             $data['titulo'] = "CrearCueenta ";
-            return view('plantillas/header_view.php', $data).view("plantillas/nav_view.php").view("contenido/crearcuenta.php").view("plantillas/footer_view.php");
+            return view('plantillas/header_view.php', $data)
+            .view("plantillas/nav_view.php")
+            .view("contenido/crearcuenta.php")
+            .view("plantillas/footer_view.php");
         }
 
         $validation = \Config\Services::validation();
@@ -86,8 +89,12 @@ class ClienteController extends BaseController
         $data = $this->request->getPost(array_keys($validation->getRules()));
 
         if (! $this->validateData($data, $validation->getRules())) {
-
-            return view('contenido/crearcuenta', ['validation' => $this->validator]);
+            $data1['titulo'] = "CrearCueenta ";
+            return view('plantillas/header_view.php', $data1)
+            .view("plantillas/nav_view.php")
+            .view("contenido/crearcuenta.php", ['validation' => $this->validator])
+            .view("plantillas/footer_view.php");
+           // return view('contenido/crearcuenta', ['validation' => $this->validator]);
         }
 
         $validData = $this->validator->getValidated();
@@ -96,9 +103,9 @@ class ClienteController extends BaseController
         $validData['cliente_password'] = password_hash($validData['cliente_password'], PASSWORD_DEFAULT);
 
         // Guardar en la base de datos
-        $model = new clienteModel();
+        $model = new ClienteModel();
         $model->insert($validData);
 
-        return view('success'); // Vista de éxito
+        return view('contenido/QuienesSomos'); // Vista de éxito
     }
 }
