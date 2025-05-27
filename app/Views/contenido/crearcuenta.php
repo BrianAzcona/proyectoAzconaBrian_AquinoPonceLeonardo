@@ -9,6 +9,12 @@
             <p class="text-muted text-center mb-4">Regístrate para empezar a disfrutar de nuestros servicios.</p>
             <form action="<?= base_url('crearCuenta') ?>" method="POST">
 
+                <?php if (isset($validation)): ?>
+                <div class="alert alert-danger">
+                    <?= $validation->listErrors(); ?>
+                </div>
+                <?php endif; ?>
+
                 <!-- Nombre Completo -->
                 <div class="form-group mb-3">
                     <label for="nombre" class="form-label fw-semibold" style="color: black;">Nombre:</label>

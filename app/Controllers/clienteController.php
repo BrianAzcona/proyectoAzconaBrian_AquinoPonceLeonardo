@@ -86,9 +86,7 @@ class ClienteController extends BaseController
         $data = $this->request->getPost(array_keys($validation->getRules()));
 
         if (! $this->validateData($data, $validation->getRules())) {
-            $data['titulo'] = "CrearCueenta ";
-            return view('plantillas/header_view.php', $data).view("plantillas/nav_view.php").view("contenido/crearcuenta.php").view("plantillas/footer_view.php", ['validation' => $this->validator]);
-        
+
             return view('contenido/crearcuenta', ['validation' => $this->validator]);
         }
 
