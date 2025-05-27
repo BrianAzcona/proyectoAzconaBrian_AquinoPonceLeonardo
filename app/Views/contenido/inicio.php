@@ -18,7 +18,7 @@
                 <button type="submit" class="btn btn-primary fw-bold w-100">Iniciar Sesión</button>
             </form>
 
-            <a href="<?php echo base_url('crearcuenta'); ?>" class="btn btn-primary w-100">Crear Cuenta</a>
+            <a href="<?php echo base_url('crearCuenta'); ?>" class="btn btn-primary w-100">Crear Cuenta</a>
         </div>
     </div>
 </div>

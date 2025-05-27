@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Cliente_Model extends Model
+class ClienteModel extends Model
 {
     protected $table            = 'tab_clientes';
     protected $primaryKey       = 'cliente_id';
@@ -35,5 +35,3 @@ class Cliente_Model extends Model
     protected $validationMessages   = [];
     protected $skipValidation       = false;
 }
-
-
