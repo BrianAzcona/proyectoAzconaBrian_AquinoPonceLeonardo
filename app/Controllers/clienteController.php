@@ -88,16 +88,16 @@ class ClienteController extends BaseController
 
         $data = $this->request->getPost(array_keys($validation->getRules()));
 
-        if (! $this->validateData($data, $validation->getRules())) {
-            $data1['titulo'] = "CrearCueenta ";
+        if (! $validation->run($data)) {
+            $data1['titulo'] = "CrearCuenta ";
             return view('plantillas/header_view.php', $data1)
-            .view("plantillas/nav_view.php")
-            .view("contenido/crearcuenta.php", ['validation' => $this->validator])
-            .view("plantillas/footer_view.php");
-           // return view('contenido/crearcuenta', ['validation' => $this->validator]);
+                . view("plantillas/nav_view.php")
+                . view("contenido/crearcuenta.php", ['validation' => $validation])
+                . view("plantillas/footer_view.php");
         }
+        
+        $validData = $validation->getValidated();
 
-        $validData = $this->validator->getValidated();
 
         // Encriptar contraseña
         $validData['cliente_password'] = password_hash($validData['cliente_password'], PASSWORD_DEFAULT);
