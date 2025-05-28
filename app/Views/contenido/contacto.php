@@ -1,3 +1,32 @@
+<?php if (isset($mensaje)): ?>
+<!-- Modal -->
+<div class="modal fade" id="mensajeModal" tabindex="-1" aria-labelledby="mensajeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title" id="mensajeModalLabel">Registro Exitoso</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                    aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <?= esc($mensaje) ?>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Mostrar modal automáticamente
+window.addEventListener('DOMContentLoaded', function() {
+    var modal = new bootstrap.Modal(document.getElementById('mensajeModal'));
+    modal.show();
+});
+</script>
+<?php endif; ?>
+
 <div class="container text-center my-5">
     <div class="row align-items-start">
         <div class="col-md-6">
@@ -5,7 +34,18 @@
                 <h3 class="mb-4 fw-bold text-primary">Comunícate con Soporte</h3>
                 <p class="text-muted mb-4">Completa el siguiente formulario y nuestro equipo se pondrá en contacto
                     contigo a la brevedad.</p>
-                <form action="/enviar-soporte" method="POST">
+                <form action="<?= base_url('consulta') ?>" method="POST">
+
+                    <?php if (isset($validation)): ?>
+                    <div class="alert alert-danger">
+                        <ul>
+                            <?php foreach ($validation->getErrors() as $error): ?>
+                            <li><?= esc($error) ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                    <?php endif; ?>
+
                     <div class="form-group mb-3 text-start">
                         <label for="apellido" class="form-label fw-semibold" style="color: black">Apellido:</label>
                         <input type=" text" id="apellido" name="apellido" class="form-control" required>
@@ -17,26 +57,26 @@
                     <div class="form-group mb-3 text-start">
                         <label for="email" class="form-label fw-semibold" style="color: black">Correo
                             Electrónico:</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
+                        <input type="email" id="correo" name="correo" class="form-control" required>
                     </div>
                     <div class="form-group mb-3 text-start">
                         <label for="asunto" class="form-label fw-semibold" style="color: black">Asunto:</label>
-                        <input type="asunto" id="asunto" name="asunto" class="form-control" required>
+                        <input type="text" id="asunto" name="asunto" class="form-control" required>
                     </div>
                     <div class="form-group mb-3 text-start">
                         <label for="numeroOrden" class="form-label fw-semibold" style="color: black">Número de
                             orden(opcional):</label>
-                        <input type="numeroOrden" id="numeroOrden" name="numeroOrden" class="form-control" required>
+                        <input type="text" id="num_orden" name="num_orden" class="form-control" required>
                     </div>
                     <div class="form-group mb-3 text-start">
                         <label for="plataforma" class="form-label fw-semibold"
                             style="color: black">Plataforma(opcional):</label>
-                        <input type="plataforma" id="plataforma" name="plataforma" class="form-control" required>
+                        <input type="text" id="plataforma" name="plataforma" class="form-control" required>
                     </div>
                     <div class="form-group mb-4 text-start">
                         <label for="mensaje" class="form-label fw-semibold" style="color: black">Descripción del
                             Problema:</label>
-                        <textarea id="mensaje" name="mensaje" class="form-control" rows="5" required></textarea>
+                        <textarea id="consulta" name="consulta" class="consulta" rows="5" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary w-100 fw-bold">Enviar Mensaje a Soporte</button>
                 </form>
