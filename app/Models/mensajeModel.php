@@ -4,9 +4,9 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Mensaje_Model extends Model
+class MensajeModel extends Model
 {
-    protected $table            = 'mensaje';
+    protected $table            = 'tab_mensaje';
     protected $primaryKey       = 'id_mensaje';
     protected $useAutoIncrement = true;
 

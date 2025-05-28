@@ -2,7 +2,9 @@
 
 namespace App\Controllers;
 
-class Mensaje extends BaseController
+use App\Models\MensajeModel;
+
+class MensajeController extends BaseController
 {
     protected $helpers = ['form'];
 
@@ -12,15 +14,20 @@ class Mensaje extends BaseController
             return view('mensajeValidacion'); // La vista con el formulario de mensaje
         }
 
-        $rules = [
-            'apellido'    => 'required|max_length[100]',
-            'nombre'      => 'required|max_length[100]',
-            'correo'      => 'required|valid_email|max_length[254]',
-            'asunto'      => 'required|max_length[255]',
-            'num_orden'   => 'required|max_length[50]',
-            'plataforma'  => 'required|max_length[100]',
-            'consulta'    => 'required'
-        ];
+        $validation = \Config\Services::validation();
+        $request = \Config\Services::request();
+
+        $validation->setRules([
+            'apellido'   => 'required|max_length[50]',
+            'nombre'     => 'required|max_length[50]',
+            'correo'     => 'required|valid_email|max_length[80]',
+            'asunto'     => 'required|max_length[30]',
+            'num_orden'  => 'permit_empty|max_length[50]',      // ahora es opcional
+            'plataforma' => 'permit_empty|max_length[100]',     // ahora es opcional
+            'consulta'   => 'required'
+        ], [
+            
+        ]);
 
         $data = $this->request->getPost(array_keys($rules));
 

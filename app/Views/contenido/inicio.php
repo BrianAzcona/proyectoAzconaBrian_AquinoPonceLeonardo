@@ -1,3 +1,33 @@
+<?php if (isset($mensaje)): ?>
+<!-- Modal -->
+<div class="modal fade" id="mensajeModal" tabindex="-1" aria-labelledby="mensajeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title" id="mensajeModalLabel">Registro Exitoso</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                    aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <?= esc($mensaje) ?>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Mostrar modal automáticamente
+window.addEventListener('DOMContentLoaded', function() {
+    var modal = new bootstrap.Modal(document.getElementById('mensajeModal'));
+    modal.show();
+});
+</script>
+<?php endif; ?>
+
+
 <div class="pagina-inicio">
     <div class="container-fluid d-flex justify-content-center align-items-center min-vh-100 bg-light">
         <div class="contacto-infor col-md-5 col-lg-4">
