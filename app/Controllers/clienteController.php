@@ -105,6 +105,16 @@ class ClienteController extends BaseController
         // Guardar en la base de datos
         $model = new ClienteModel();
         $model->insert($validData);
+        
+        // Iniciar sesión automáticamente
+            $session = session();
+            $session->set([
+            'cliente_id'     => $model->getInsertID(),  // El ID del cliente que se acaba de registrar
+            'cliente_nombre' => $validData['cliente_nombre'], // Nombre del cliente
+            'perfil_id'      => $validData['perfil_id'], // Perfil (1 = cliente, 2 = admin, etc)
+            'isLoggedIn'     => true // Bandera para saber si ya inició sesión
+            ]);
+
 
         $data['mensaje'] = '¡Registro exitoso! Bienvenido a la plataforma.';
         $data['titulo'] = 'Inicio';
