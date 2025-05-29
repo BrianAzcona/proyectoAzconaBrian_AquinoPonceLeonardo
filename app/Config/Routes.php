@@ -22,3 +22,5 @@ $routes->get('inicio', 'Home::inicio');
 $routes->match(['get', 'post'], 'crearCuenta', 'ClienteController::agregarCliente');
 
 $routes->match(['get', 'post'], 'consulta', 'MensajeController::agregarConsulta');
+$routes->get('upload', 'Upload::index');          // Add this line.
+$routes->post('upload/upload', 'Upload::upload'); // Add this line.
