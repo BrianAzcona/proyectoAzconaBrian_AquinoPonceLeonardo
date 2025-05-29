@@ -28,13 +28,13 @@
                     <a class="nav-link" href="<?php echo base_url('ayuda'); ?>">Ayuda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('carrito'); ?>">Ver Carrito</a>
+                    <a class="nav-link" href="<?php echo base_url('carrito'); ?>">Ver Carrito</a> 
                 </li>
                 <li class="nav-item">
                     <a class="nav-link fw-bold"><?php echo $this->session->userdata('nombre'); ?></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-danger" href="<?php echo base_url('logout'); ?>">Salir</a>
+                    <a class="nav-link text-danger" href="<?= base_url('cliente/cerrarSesion') ?>">Salir</a>
                 </li>
             </ul>
         </div>
