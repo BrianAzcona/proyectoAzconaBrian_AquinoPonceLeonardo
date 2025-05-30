@@ -25,7 +25,7 @@ class Perfil extends BaseController
         $validData = $this->validator->getValidated();
 
         // Si tenés modelo, podrías guardar así:
-        // $this->perfilModel->insert($validData);
+        $this->perfilModel->insert($validData);
 
         return view('success'); // Vista de éxito
     }
