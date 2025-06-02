@@ -22,9 +22,9 @@
     <link rel="stylesheet" href="assets/css/estilo_contacto.css">
     <link rel="stylesheet" href="assets/css/estilo_footer.css">
 
+    <link rel="stylesheet" href="Views/backend/css/estilo_headerCliente.css">
+    <link rel="stylesheet" href="Views/backend/css/estilo_navCliente.css">
 
-    <link rel="stylesheet" href="backend/css/estilo_navCliente.css">
-    <link rel="stylesheet" href="backend/css/estilo_headerCliente.css">
 
 
     <link rel="stylesheet" href="assets/css/estiloCarrusel.css">
