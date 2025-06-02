@@ -1,4 +1,3 @@
-<?php if ($this->session->userdata('tipo') == 'cliente'): ?>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
 
@@ -28,10 +27,7 @@
                     <a class="nav-link" href="<?php echo base_url('ayuda'); ?>">Ayuda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('carrito'); ?>">Ver Carrito</a> 
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-bold"><?php echo $this->session->userdata('nombre'); ?></a>
+                    <a class="nav-link" href="<?php echo base_url('carrito'); ?>">Ver Carrito</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-danger" href="<?= base_url('cliente/cerrarSesion') ?>">Salir</a>
@@ -40,4 +36,3 @@
         </div>
     </div>
 </nav>
-<?php endif; ?>

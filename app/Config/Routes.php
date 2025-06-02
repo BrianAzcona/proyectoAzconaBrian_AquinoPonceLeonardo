@@ -27,5 +27,7 @@ $routes->get('upload', 'Upload::index');          // Add this line.
 $routes->post('upload/upload', 'Upload::upload'); // Add this line.
 
 $routes->get('cliente/cerrarSesion', 'ClienteController::cerrarSesion');
+
 $routes->match(['get', 'post'], 'cliente/iniciarSesion', 'ClienteController::iniciarSesion');
 
+$routes->get('cliente/inicioCliente', 'ClienteController::inicioCliente');

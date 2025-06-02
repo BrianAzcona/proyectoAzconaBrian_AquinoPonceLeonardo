@@ -1,0 +1,48 @@
+nav.navbar {
+    background-color: black; 
+    border-bottom: 3px solid #000000;
+    padding: 12px 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .navbar-nav .nav-link {
+    color: rgb(0, 0, 0); 
+    font-weight: 700;
+    padding: 8px 16px;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: blueviolet;
+    transform: scale(1.05);
+  }
+  
+  .navbar-nav {
+    gap: 25px;
+  }
+  
+  .navbar-nav .dropdown-menu {
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dropdown-menu .dropdown-item {
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  
+  @media (max-width: 991.98px) {
+    .navbar-nav {
+      text-align: center;
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .navbar-nav .nav-link {
+      font-size: 18px;
+    }
+  }
+  

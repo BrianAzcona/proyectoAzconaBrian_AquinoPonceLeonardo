@@ -175,9 +175,26 @@ class ClienteController extends BaseController
         if ($cliente['perfil_id'] == 1) {
             return redirect()->to('contacto'); // Ruta del panel de administrador
         } else {
-            return redirect()->to('/inicio'); // Ruta de usuario común
+            return redirect()->to('cliente/inicioCliente'); // Ruta de usuario común
         }
     }
+
+    public function inicioCliente()
+{
+    // Verificar si el cliente está logueado
+    if (! session()->get('isLoggedIn')) {
+        return redirect()->to('cliente/iniciarSesion');
+    }
+
+    $data['titulo'] = "Inicio Cliente";
+    $data['cliente_nombre'] = session()->get('cliente_nombre'); // por si querés usarlo en la vista
+
+    return view('backend/headerCliente.php', $data)
+        . view('backend/nav_cliente.php')
+        . view('backend/inicio_cliente.php', $data) 
+        . view('plantillas/footer_view.php');
+}
+
 
     public function cerrarSesion()
     {
