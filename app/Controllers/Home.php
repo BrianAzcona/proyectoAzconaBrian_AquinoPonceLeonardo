@@ -44,4 +44,9 @@ class Home extends BaseController
         $data['titulo'] = "CrearCueenta ";
         return view('plantillas/header_view.php', $data).view("plantillas/nav_view.php").view("contenido/crearcuenta.php").view("plantillas/footer_view.php");
     }
+    //
+    public function inicioAdmin(): string {
+        $data['titulo'] = "inicioAdmin ";
+        return view("plantillasAdmin/headerAdmin_view.php", $data).view("plantillasAdmin/nav_admin.php").view("plantillas/footer_view.php");
+    }
 } 

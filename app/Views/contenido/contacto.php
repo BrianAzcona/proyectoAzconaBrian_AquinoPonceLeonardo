@@ -48,35 +48,35 @@ window.addEventListener('DOMContentLoaded', function() {
 
                     <div class="form-group mb-3 text-start">
                         <label for="apellido" class="form-label fw-semibold" style="color: black">Apellido:</label>
-                        <input type=" text" id="apellido" name="apellido" class="form-control" required>
+                        <input type=" text" id="apellido" name="apellido" class="form-control">
                     </div>
                     <div class="form-group mb-3 text-start">
                         <label for="nombre" class="form-label fw-semibold" style="color: black">Nombre:</label>
-                        <input type=" text" id="nombre" name="nombre" class="form-control" required>
+                        <input type=" text" id="nombre" name="nombre" class="form-control">
                     </div>
                     <div class="form-group mb-3 text-start">
                         <label for="email" class="form-label fw-semibold" style="color: black">Correo
                             Electrónico:</label>
-                        <input type="email" id="correo" name="correo" class="form-control" required>
+                        <input type="email" id="correo" name="correo" class="form-control">
                     </div>
                     <div class="form-group mb-3 text-start">
                         <label for="asunto" class="form-label fw-semibold" style="color: black">Asunto:</label>
-                        <input type="text" id="asunto" name="asunto" class="form-control" required>
+                        <input type="text" id="asunto" name="asunto" class="form-control">
                     </div>
                     <div class="form-group mb-3 text-start">
                         <label for="numeroOrden" class="form-label fw-semibold" style="color: black">Número de
                             orden(opcional):</label>
-                        <input type="text" id="num_orden" name="num_orden" class="form-control" required>
+                        <input type="text" id="num_orden" name="num_orden" class="form-control">
                     </div>
                     <div class="form-group mb-3 text-start">
                         <label for="plataforma" class="form-label fw-semibold"
                             style="color: black">Plataforma(opcional):</label>
-                        <input type="text" id="plataforma" name="plataforma" class="form-control" required>
+                        <input type="text" id="plataforma" name="plataforma" class="form-control">
                     </div>
                     <div class="form-group mb-4 text-start">
                         <label for="mensaje" class="form-label fw-semibold" style="color: black">Descripción del
                             Problema:</label>
-                        <textarea id="consulta" name="consulta" class="consulta" rows="5" required></textarea>
+                        <textarea id="consulta" name="consulta" class="consulta" rows="5"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary w-100 fw-bold">Enviar Mensaje a Soporte</button>
                 </form>

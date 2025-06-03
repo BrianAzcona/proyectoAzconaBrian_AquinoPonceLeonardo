@@ -5,6 +5,7 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
+//$routes->get('/', 'Home::inicioAdmin');
 $routes->get('/', 'Home::index');
 
 $routes->get('nosotros', 'Home::quienesSomos');
@@ -31,3 +32,5 @@ $routes->get('cliente/cerrarSesion', 'ClienteController::cerrarSesion');
 $routes->match(['get', 'post'], 'cliente/iniciarSesion', 'ClienteController::iniciarSesion');
 
 $routes->get('cliente/inicioCliente', 'ClienteController::inicioCliente');
+
+//
