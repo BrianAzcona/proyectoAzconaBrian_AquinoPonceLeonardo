@@ -26,6 +26,24 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url('Ayuda'); ?>">Ayuda</a>
                 </li>
+
+                <?php if (session()->get('isLoggedIn')): ?>
+                <!-- Opciones visibles solo si el cliente está logueado -->
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url('cliente/inicioCliente'); ?>">
+                        <?= esc(session()->get('cliente_nombre')) ?>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url('carrito'); ?>">Ver Carrito</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-danger" href="<?= base_url('cliente/cerrarSesion'); ?>">Salir</a>
+                </li>
+                <?php else: ?>
+
+
+                <?php endif; ?>
             </ul>
         </div>
 

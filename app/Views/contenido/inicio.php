@@ -39,11 +39,11 @@ window.addEventListener('DOMContentLoaded', function() {
             <form action="<?= base_url ('cliente/iniciarSesion') ?>" method="POST">
                 <div class="form-group mb-3">
                     <label for="email" class="form-label">Correo Electrónico:</label>
-                    <input type="email" id="cliente_correo" name="cliente_correo" class="form-control" required>
+                    <input type="email" id="cliente_correo" name="cliente_correo" class="form-control">
                 </div>
                 <div class="form-group mb-4">
                     <label for="password" class="form-label">Contraseña:</label>
-                    <input type="password" id="cliente_password" name="cliente_password" class="form-control" required>
+                    <input type="password" id="cliente_password" name="cliente_password" class="form-control">
                 </div>
                 <button type="submit" class="btn btn-primary fw-bold w-100">Iniciar Sesión</button>
             </form>

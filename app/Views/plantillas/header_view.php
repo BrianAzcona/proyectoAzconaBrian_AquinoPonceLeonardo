@@ -38,13 +38,12 @@
 </head>
 
 <body>
-
     <header>
         <div class="header-container container d-flex flex-wrap align-items-center justify-content-between gap-3">
 
             <div class="logo d-flex align-items-center gap-2">
-                <a href="<?php echo base_url('/'); ?>">
-                    <img src="assets/img/logo.png" class="img-thumbnail" width="70" height="70"
+                <a href="<?= base_url('/'); ?>">
+                    <img src="<?= base_url('assets/img/logo.png') ?>" class="img-thumbnail" width="70" height="70"
                         alt="Logo de la compañía">
                 </a>
                 <h2 class="nombre-empresa1">CODI GAMES</h2>
@@ -56,13 +55,22 @@
             </form>
 
             <div class="acciones d-flex align-items-center gap-3">
-
                 <a class="carro-de-compras" href="#"><i class="fas fa-cart-shopping"></i></a>
-                <a class="usuario" href="<?php echo base_url('inicio'); ?>"><i class="fas fa-circle-user"></i></a>
+
+                <?php if (session()->get('isLoggedIn')): ?>
+                <span class="text-dark fw-bold"> <?= esc(session()->get('cliente_nombre')) ?></span>
+                <a class="usuario" href="<?= base_url('cliente/cerrarSesion'); ?>">
+                    <i class="fas fa-sign-out-alt" title="Cerrar sesión"></i>
+                </a>
+                <?php else: ?>
+                <a class="usuario" href="<?= base_url('inicio'); ?>">
+                    <i class="fas fa-circle-user" title="Iniciar sesión"></i>
+                </a>
+                <?php endif; ?>
             </div>
+
         </div>
     </header>
-
 </body>
 
 </html>

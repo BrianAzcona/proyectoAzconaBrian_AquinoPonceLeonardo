@@ -189,8 +189,8 @@ class ClienteController extends BaseController
     $data['titulo'] = "Inicio Cliente";
     $data['cliente_nombre'] = session()->get('cliente_nombre'); // por si querés usarlo en la vista
 
-    return view('backend/headerCliente.php', $data)
-        . view('backend/nav_cliente.php')
+    return view('plantillas/header_view.php', $data)
+        . view('plantillas/nav_view.php')
         . view('backend/inicio_cliente.php', $data) 
         . view('plantillas/footer_view.php');
 }
