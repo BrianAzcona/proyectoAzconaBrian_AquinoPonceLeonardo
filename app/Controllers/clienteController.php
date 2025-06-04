@@ -115,71 +115,72 @@ class ClienteController extends BaseController
     }
 
     public function iniciarSesion()
-    {
-        if (! $this->request->is('post')) {
-            $data['titulo'] = "Iniciar Sesión";
-            return view('plantillas/header_view.php', $data)
-                . view("plantillas/nav_view.php")
-                . view("contenido/inicio.php")
-                . view("plantillas/footer_view.php");
-        }
-
-        $validation = \Config\Services::validation();
-        $request = \Config\Services::request();
-
-        $validation->setRules([
-            'cliente_correo'   => 'required|valid_email',
-            'cliente_password' => 'required'
-        ], [
-            'cliente_correo' => [
-                'required'    => 'El correo es obligatorio.',
-                'valid_email' => 'Debe ingresar un correo válido.'
-            ],
-            'cliente_password' => [
-                'required' => 'La contraseña es obligatoria.'
-            ]
-        ]);
-
-        $data = $request->getPost(['cliente_correo', 'cliente_password']);
-
-        if (! $validation->run($data)) {
-            $data['titulo'] = "Iniciar Sesión";
-            return view('plantillas/header_view.php', $data)
-                . view("plantillas/nav_view.php")
-                . view("contenido/inicio.php", ['validation' => $validation])
-                . view("plantillas/footer_view.php");
-        }
-
-        $model = new ClienteModel();
-        $cliente = $model->where('cliente_correo', $data['cliente_correo'])->first();
-
-        if (! $cliente || ! password_verify($data['cliente_password'], $cliente['cliente_password'])) {
-            $data['error'] = 'Correo o contraseña incorrectos.';
-            $data['titulo'] = "Iniciar Sesión";
-            return view('plantillas/header_view.php', $data)
-                . view("plantillas/nav_view.php")
-                . view("contenido/inicio.php", $data)
-                . view("plantillas/footer_view.php");
-        }
-
-        // Guardar perfil en sesión y redirigir según sea admin o cliente
-        session()->set([
-            'cliente_id'      => $cliente['cliente_id'],
-            'cliente_nombre'  => $cliente['cliente_nombre'],
-            'cliente_correo'  => $cliente['cliente_correo'],
-            'perfil_id'       => $cliente['perfil_id'], 
-            'isLoggedIn'      => true
-        ]);
-
-        // Redirigir según perfil
-        if ($cliente['perfil_id'] == 1) {
-            return redirect()->to('contacto'); // Ruta del panel de administrador
-        } else {
-            return redirect()->to('cliente/inicioCliente'); // Ruta de usuario común
-        }
+{
+    if (! $this->request->is('post')) {
+        $data['titulo'] = "Iniciar Sesión";
+        return view('plantillas/header_view.php', $data)
+            . view("plantillas/nav_view.php")
+            . view("contenido/inicio.php")
+            . view("plantillas/footer_view.php");
     }
 
-    public function inicioCliente()
+    $validation = \Config\Services::validation();
+    $request = \Config\Services::request();
+
+    $validation->setRules([
+        'cliente_correo'   => 'required|valid_email',
+        'cliente_password' => 'required'
+    ], [
+        'cliente_correo' => [
+            'required'    => 'El correo es obligatorio.',
+            'valid_email' => 'Debe ingresar un correo válido.'
+        ],
+        'cliente_password' => [
+            'required' => 'La contraseña es obligatoria.'
+        ]
+    ]);
+
+    $data = $request->getPost(['cliente_correo', 'cliente_password']);
+
+    if (! $validation->run($data)) {
+        $data['titulo'] = "Iniciar Sesión";
+        return view('plantillas/header_view.php', $data)
+            . view("plantillas/nav_view.php")
+            . view("contenido/inicio.php", ['validation' => $validation])
+            . view("plantillas/footer_view.php");
+    }
+
+    $model = new ClienteModel();
+    $cliente = $model->where('cliente_correo', $data['cliente_correo'])->first();
+
+    if (! $cliente || ! password_verify($data['cliente_password'], $cliente['cliente_password'])) {
+        $data['error'] = 'Correo o contraseña incorrectos.';
+        $data['titulo'] = "Iniciar Sesión";
+        return view('plantillas/header_view.php', $data)
+            . view("plantillas/nav_view.php")
+            . view("contenido/inicio.php", $data)
+            . view("plantillas/footer_view.php");
+    }
+
+    // Guardar datos en sesión
+    session()->set([
+        'cliente_id'      => $cliente['cliente_id'],
+        'cliente_nombre'  => $cliente['cliente_nombre'],
+        'cliente_correo'  => $cliente['cliente_correo'],
+        'perfil_id'       => $cliente['perfil_id'],
+        'isLoggedIn'      => true,
+        'nombre'          => $cliente['cliente_nombre'] // útil para admin
+    ]);
+
+    // Redirigir según perfil
+    if ($cliente['perfil_id'] == 1) {
+        return redirect()->to('admin/inicioAdmin'); // Ruta del panel de administrador
+    } else {
+        return redirect()->to('cliente/inicioCliente'); // Ruta de usuario común
+    }
+}
+
+public function inicioCliente()
 {
     // Verificar si el cliente está logueado
     if (! session()->get('isLoggedIn')) {
@@ -187,11 +188,27 @@ class ClienteController extends BaseController
     }
 
     $data['titulo'] = "Inicio Cliente";
-    $data['cliente_nombre'] = session()->get('cliente_nombre'); // por si querés usarlo en la vista
+    $data['cliente_nombre'] = session()->get('cliente_nombre');
 
     return view('plantillas/header_view.php', $data)
         . view('plantillas/nav_view.php')
-        . view('backend/inicio_cliente.php', $data) 
+        . view('backend/inicio_cliente.php', $data)
+        . view('plantillas/footer_view.php');
+}
+
+public function inicioAdmin()
+{
+    // Verificar si el usuario está logueado y es administrador
+    if (! session()->get('isLoggedIn') || session()->get('perfil_id') != 1) {
+        return redirect()->to('cliente/iniciarSesion');
+    }
+
+    $data['titulo'] = "Panel de Administración";
+    $data['nombre'] = session()->get('nombre');
+
+    return view('plantillas/header_view.php', $data)
+        . view('plantillas/nav_view.php')
+        . view('backend/inicio_admin.php', $data)
         . view('plantillas/footer_view.php');
 }
 
