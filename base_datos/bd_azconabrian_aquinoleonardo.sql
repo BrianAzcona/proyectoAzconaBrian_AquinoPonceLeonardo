@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-06-2025 a las 16:42:37
+-- Tiempo de generación: 05-06-2025 a las 16:29:49
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -24,22 +24,11 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `juego_categoria`
---
-
-CREATE TABLE `juego_categoria` (
-  `categoria_id` int(255) NOT NULL,
-  `categoria_descripcion` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `tab_categoria`
 --
 
 CREATE TABLE `tab_categoria` (
-  `categoria_id` int(255) NOT NULL,
+  `categoria_id` int(11) NOT NULL,
   `categoria_descripcion` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -78,14 +67,14 @@ INSERT INTO `tab_clientes` (`cliente_id`, `cliente_nombre`, `cliente_apellido`, 
 --
 
 CREATE TABLE `tab_juegos` (
-  `juego_id` int(50) NOT NULL,
+  `juego_id` int(11) NOT NULL,
   `juego_nombre` varchar(255) NOT NULL,
   `juego_plataforma` varchar(255) NOT NULL,
   `juego_descripcion` text NOT NULL,
   `juego_stock` int(255) NOT NULL,
   `juego_precio` decimal(65,0) NOT NULL,
   `juego_imagen` varchar(255) NOT NULL,
-  `categoria_id` int(255) NOT NULL,
+  `categoria_id` int(11) NOT NULL,
   `juego_estado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -122,12 +111,6 @@ CREATE TABLE `tab_perfil` (
 --
 
 --
--- Indices de la tabla `juego_categoria`
---
-ALTER TABLE `juego_categoria`
-  ADD PRIMARY KEY (`categoria_id`);
-
---
 -- Indices de la tabla `tab_categoria`
 --
 ALTER TABLE `tab_categoria`
@@ -156,16 +139,10 @@ ALTER TABLE `tab_perfil`
 --
 
 --
--- AUTO_INCREMENT de la tabla `juego_categoria`
---
-ALTER TABLE `juego_categoria`
-  MODIFY `categoria_id` int(255) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `tab_categoria`
 --
 ALTER TABLE `tab_categoria`
-  MODIFY `categoria_id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `categoria_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `tab_clientes`
