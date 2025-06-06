@@ -31,4 +31,7 @@ $routes->get('cliente/cerrarSesion', 'ClienteController::cerrarSesion');
 $routes->match(['get', 'post'], 'cliente/iniciarSesion', 'ClienteController::iniciarSesion');
 
 $routes->get('cliente/inicioCliente', 'ClienteController::inicioCliente');
+
 $routes->get('admin/inicioAdmin', 'ClienteController::inicioAdmin');
+
+$routes->get('catalogo-juegos', 'JuegoController::listar_juegos');
