@@ -37,6 +37,17 @@ window.addEventListener('DOMContentLoaded', function() {
             <h3 class="titulo-morado text-center mb-3">Inicia Sesión</h3>
             <p class="text-muted text-center mb-4">Accede a tu cuenta para continuar.</p>
             <form action="<?= base_url ('cliente/iniciarSesion') ?>" method="POST">
+
+                <?php if (isset($validation)): ?>
+                <div class="alert alert-danger">
+                    <ul>
+                        <?php foreach ($validation->getErrors() as $error): ?>
+                        <li><?= esc($error) ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+                <?php endif; ?>
+
                 <div class="form-group mb-3">
                     <label for="email" class="form-label">Correo Electrónico:</label>
                     <input type="email" id="cliente_correo" name="cliente_correo" class="form-control">

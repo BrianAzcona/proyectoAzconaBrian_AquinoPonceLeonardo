@@ -154,11 +154,11 @@ class ClienteController extends BaseController
     $cliente = $model->where('cliente_correo', $data['cliente_correo'])->first();
 
     if (! $cliente || ! password_verify($data['cliente_password'], $cliente['cliente_password'])) {
-        $data['error'] = 'Correo o contraseña incorrectos.';
+        $validation->setError('cliente_correo', 'Correo o contraseña incorrectos.');
         $data['titulo'] = "Iniciar Sesión";
         return view('plantillas/header_view.php', $data)
             . view("plantillas/nav_view.php")
-            . view("contenido/inicio.php", $data)
+            . view("contenido/inicio.php", ['validation' => $validation])
             . view("plantillas/footer_view.php");
     }
 
