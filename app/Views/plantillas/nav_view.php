@@ -22,7 +22,7 @@
                     <a class="nav-link" href="<?php echo base_url('ventas'); ?>">Listar ventas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('productos/registrar'); ?>">Registrar producto</a>
+                    <a class="nav-link" href="<?php echo base_url('registrarProducto'); ?>">Registrar producto</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url('productos/gestionar'); ?>">Gestionar productos</a>

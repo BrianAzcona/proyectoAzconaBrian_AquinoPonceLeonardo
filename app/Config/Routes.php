@@ -35,3 +35,6 @@ $routes->get('cliente/inicioCliente', 'ClienteController::inicioCliente');
 $routes->get('admin/inicioAdmin', 'ClienteController::inicioAdmin');
 
 $routes->get('catalogo-juegos', 'JuegoController::listar_juegos');
+
+//Funciones para el administrador
+$routes->get('registrarProducto', 'adminController::registroProducto');
