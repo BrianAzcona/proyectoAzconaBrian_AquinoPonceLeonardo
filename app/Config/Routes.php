@@ -36,5 +36,14 @@ $routes->get('admin/inicioAdmin', 'ClienteController::inicioAdmin');
 
 $routes->get('catalogo-juegos', 'JuegoController::listar_juegos');
 
+$routes->get('ver_carrito', 'carrito_controller::ver_carrito');
+
+$routes->post('agregar_carrito', 'carrito_controller::agregar_carrito');
+
+$routes->get('eliminar_item/(:any)', 'carrito_controller::borrar/$1');
+
+$routes->get('vaciar_carrito/(:any)', 'carrito_controller::borrar/$1');
+
+
 //Funciones para el administrador
 $routes->get('registrarProducto', 'adminController::registroProducto');

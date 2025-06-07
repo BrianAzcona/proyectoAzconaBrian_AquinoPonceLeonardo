@@ -60,7 +60,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('carrito'); ?>">Ver Carrito</a>
+                    <a class="nav-link" href="<?= base_url('ver_carrito'); ?>">Ver Carrito</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-danger" href="<?= base_url('cliente/cerrarSesion'); ?>">Salir</a>

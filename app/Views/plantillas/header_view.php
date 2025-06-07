@@ -57,7 +57,8 @@
                 ?>
 
                 <?php if ($isCliente || $isInvitado): ?>
-                <a class="carro-de-compras" href="#"><i class="fas fa-cart-shopping"></i></a>
+                <a class="carro-de-compras" href="<?= base_url('ver_carrito'); ?>">
+                    <i class="fas fa-cart-shopping"></i></a>
                 <?php endif; ?>
 
                 <?php if (session()->get('isLoggedIn')): ?>
