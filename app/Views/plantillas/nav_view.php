@@ -16,7 +16,7 @@
                     <a class="nav-link" href="<?php echo base_url('consultas'); ?>">Ver consultas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('productos/listar'); ?>">Listar productos</a>
+                    <a class="nav-link" href="<?php echo base_url('listarJuegos'); ?>">Listar productos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url('ventas'); ?>">Listar ventas</a>

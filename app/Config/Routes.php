@@ -49,3 +49,5 @@ $routes->get('vaciar_carrito/(:any)', 'carrito_controller::borrar/$1');
 $routes->get('registrarProducto', 'juegoController::registroProducto');
 
 $routes->post('registrarJuego', 'juegoController::agregarJuego');
+
+$routes->get('listarJuegos', 'juegoController::listaProductos');

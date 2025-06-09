@@ -16,6 +16,14 @@
             </div>
             <?php endif; ?>
 
+
+            <?php if (session()->getFlashdata('mensaje')): ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <?= session()->getFlashdata('mensaje') ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <?php endif; ?>
+
             <div class="form-group mb-3 text-start">
                 <label for="juego_nombre" class="form-label fw-semibold" style="color: black">Nombre:</label>
                 <input type="text" id="juego_nombre" name="juego_nombre" class="form-control"

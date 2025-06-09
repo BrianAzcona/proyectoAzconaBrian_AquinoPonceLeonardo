@@ -125,7 +125,7 @@ public function form_agregar_juego() {
         if ($validation->withRequest($request)->run()) {
             $img = $this->request->getFile('juego_imagen');
             $nombre_aleatorio = $img->getRandomName();
-            $img->move(ROOTPATH . 'public/assets/uploads', $nombre_aleatorio);
+            $img->move(ROOTPATH . 'assets\uploads', $nombre_aleatorio);
     
             $data = [
                 'juego_nombre'      => $request->getPost('juego_nombre'),
@@ -155,8 +155,15 @@ public function form_agregar_juego() {
                 . view('plantillas/footer_view');
         }
     }
-    
-
+    public function listaProductos() {
+        $model = new JuegoModel();
+        $data['productos'] = $model->findAll();
+        $data['titulo'] = "Lista de productos";
+        return view('plantillas/header_view', $data)
+                . view('plantillas/nav_view')
+                . view('contenidoAdmin/listarProductos_view.php', $data)
+                . view('plantillas/footer_view');
+    }
     /*public function crear()
     {
         helper('form');
