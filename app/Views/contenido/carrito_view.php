@@ -1,39 +1,49 @@
-<div class="container my-4">
-    <!-- Usamos el título que envía el controlador -->
-    <h2><?= esc($titulo) ?></h2>
+<?php $cart = \Config\Services::cart(); ?>
 
-    <?php if (! empty($items)) : ?>
-        <ul style="list-style:none; padding:0;">
-            <?php $total = 0; ?>
-            <?php foreach ($items as $item): ?>
-                <li style="padding:10px; margin-bottom:10px; background:#f1f1f1; border-radius:5px;">
-                    <strong><?= esc($item['name']) ?></strong><br>
-                    Cantidad: <?= esc($item['qty']) ?><br>
-                    Precio unitario: $<?= number_format($item['price'], 2) ?><br>
-                    Subtotal: $<?= number_format($item['subtotal'], 2) ?>
+<h1 class="text-center"><?= esc($titulo) ?></h1>
+<a href="<?= base_url('juegos') ?>" class="btn btn-success" role="button">Continuar comprando</a>
 
-                    <div style="margin-top:10px;">
-                        <a href="<?= site_url('eliminar_item/' . $item['rowid']) ?>"
-                           style="color:#007BFF; text-decoration:none;">
-                           Eliminar
-                        </a>
-                    </div>
-                </li>
-                <?php $total += $item['subtotal']; ?>
-            <?php endforeach; ?>
-        </ul>
+<?php if ($cart->contents() == NULL): ?>
+<h2 class="text-center alert alert-danger mt-4">El carrito está vacío</h2>
+<?php else: ?>
 
-        <div style="font-weight:bold; margin-top:20px;">
-            Total: $<?= number_format($total, 2) ?>
-        </div>
+<table class="table table-bordered table-striped mt-4">
+    <thead>
+        <tr>
+            <th>Nº ítem</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+            <th>Acción</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        $i = 1;
+        $total = 0;
+        foreach ($cart->contents() as $item):
+        ?>
+        <tr>
+            <td><?= $i++ ?></td>
+            <td><?= esc($item['name']) ?></td>
+            <td>$ <?= number_format($item['price'], 2) ?></td>
+            <td><?= esc($item['qty']) ?></td>
+            <td>$ <?= number_format($item['subtotal'], 2) ?></td>
+            <td>
+                <a href="<?= base_url('carrito/borrar/' . $item['rowid']) ?>" class="btn btn-danger btn-sm">Eliminar</a>
+            </td>
+        </tr>
+        <?php $total += $item['subtotal']; endforeach; ?>
+        <tr>
+            <td colspan="4" class="text-end"><strong>Total Compra:</strong></td>
+            <td><strong>$ <?= number_format($total, 2) ?></strong></td>
+            <td>
+                <a href="<?= base_url('carrito/borrar/all') ?>" class="btn btn-warning btn-sm">Vaciar carrito</a>
+                <a href="<?= base_url('ventas') ?>" class="btn btn-primary btn-sm">Ordenar compra</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
-        <div style="margin-top:15px;">
-            <a href="<?= site_url('vaciar_carrito/all') ?>"
-               style="color:#FF0000; text-decoration:none;">
-               Vaciar carrito
-            </a>
-        </div>
-    <?php else: ?>
-        <p>El carrito está vacío.</p>
-    <?php endif; ?>
-</div>
+<?php endif; ?>
