@@ -46,4 +46,6 @@ $routes->get('vaciar_carrito/(:any)', 'carrito_controller::borrar/$1');
 
 
 //Funciones para el administrador
-$routes->get('registrarProducto', 'adminController::registroProducto');
+$routes->get('registrarProducto', 'juegoController::registroProducto');
+
+$routes->post('registrarJuego', 'juegoController::agregarJuego');

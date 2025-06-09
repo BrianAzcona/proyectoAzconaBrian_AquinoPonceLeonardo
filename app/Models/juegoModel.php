@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class JuegoModel extends Model
 {
-    protected $table            = 'tab_juego'; // Nombre real de la tabla
+    protected $table            = 'tab_juegos'; // Nombre real de la tabla
     protected $primaryKey       = 'juego_id';
     protected $useAutoIncrement = true;
 
