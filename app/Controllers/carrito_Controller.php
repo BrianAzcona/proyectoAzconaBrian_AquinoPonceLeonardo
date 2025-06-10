@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use CodeIgniterCart\Cart;
+use Cart\src\Config\Services;
 
 
 class Carrito_controller extends BaseController
@@ -36,6 +37,7 @@ class Carrito_controller extends BaseController
 
     public function agregar_carrito()
     {
+        
         $producto = [
             'id'      => $this->request->getPost('id'),
             'qty'     => $this->request->getPost('cantidad'),
@@ -44,6 +46,7 @@ class Carrito_controller extends BaseController
         ];
 
         $this->cart->insert($producto);
+
         return redirect()->to('ver_carrito');
     }
 
