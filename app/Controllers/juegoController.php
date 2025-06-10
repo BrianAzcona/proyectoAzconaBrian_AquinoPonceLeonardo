@@ -10,9 +10,8 @@ class JuegoController extends BaseController
 {
     public function index()
     {
-        $model = new JuegoModel();
-        $data['juegos'] = $model->findAll();
-        $data['titulo'] = 'Listado de Juegos';
+        $juegoModel = new JuegoModel();
+        $data['juegos'] = $juegoModel->findAll(); 
 
         return view('plantillas/header_view', $data)
             . view('plantillas/nav_view')
