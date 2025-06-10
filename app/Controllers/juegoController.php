@@ -156,7 +156,7 @@ public function form_agregar_juego() {
     }
     public function listaProductos() {
         $model = new JuegoModel();
-        $data['productos'] = $model->findAll();
+        $data['productos'] = $model->obtenerJuegosConCategoria();
         $data['titulo'] = "Lista de productos";
         return view('plantillas/header_view', $data)
                 . view('plantillas/nav_view')

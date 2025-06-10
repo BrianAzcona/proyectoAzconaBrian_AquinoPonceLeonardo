@@ -2,7 +2,7 @@
 
 
 <div class="contenido-principal">
-    <div class="container my-5">
+    <div class="container my-5 d-flex justify-content-center align-items-center">
         <h1 class="text-center mb-4 titulo-categoria">Juegos de Aventura</h1>
 
         <div class="row g-4 justify-content-center">
@@ -20,6 +20,7 @@
                                     <?= form_open('agregar_carrito') ?>
                                         <?= form_hidden('id', $row['juego_id']) ?>
                                         <?= form_hidden('titulo', $row['juego_nombre']) ?>
+                                        <?= form_hidden('cantidad', $row['juego_stock']) ?>
                                         <?= form_hidden('precio', $row['juego_precio']) ?>
                                         <?= form_submit('comprar', 'Agregar al carrito', "class='btn btn-primary'") ?>
                                     <?= form_close() ?>

@@ -32,4 +32,11 @@ class JuegoModel extends Model
     protected $validationRules      = [];
     protected $validationMessages   = [];
     protected $skipValidation       = false;
+    
+    public function obtenerJuegosConCategoria()
+    {
+        return $this->select('tab_juegos.*, tab_categoria.categoria_descripcion')
+                    ->join('tab_categoria', 'tab_categoria.categoria_id = tab_juegos.categoria_id')
+                    ->findAll();
+    }
 }

@@ -30,7 +30,7 @@ class Home extends BaseController
     public function producto(): string {
         $data['titulo'] = "Productos";
         $model = new JuegoModel();
-        $data['productos'] = $model->findAll();
+        $data['productos'] = $model->obtenerJuegosConCategoria();
         return view('plantillas/header_view.php', $data).view("plantillas/nav_view.php").view("contenido\productos_view.php", $data).view("plantillas/footer_view.php");
     }
 
