@@ -1,15 +1,81 @@
-<?php if (session('login')) {
-    echo form_open('agregar_carrito');
-        echo form_hidden('id', $row['libro_id']);
-        echo form_hidden('titulo', $row['libro_titulo']);
-        echo form_hidden('precio', $row['libro_precio']);
-        echo form_submit('comprar', 'Agregar al carrito', "class='btn btn-success'");
-    echo form_close();
-} ?>
+
+
+
+<div class="contenido-principal">
+    <div class="container my-5">
+        <h1 class="text-center mb-4 titulo-categoria">Juegos de Aventura</h1>
+
+        <div class="row g-4 justify-content-center">
+            <?php foreach ($productos as $row): ?>
+                <div class="col-lg-2 col-md-4">
+                    <div class="card h-100">
+                        <img src="<?= base_url('assets/uploads/' . $row['juego_imagen']) ?>" class="card-img-top" alt="<?= esc($row['juego_nombre']) ?>">
+
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold"><?= esc($row['juego_nombre']) ?></h5>
+                            <p class="card-text">Desde <span class="fw-bold">$<?= esc($row['juego_precio']) ?> ARS</span></p>
+
+                            <div class="mt-auto d-flex flex-column gap-2">
+                                <?php if (session('isLoggedIn')): ?>
+                                    <?= form_open('agregar_carrito') ?>
+                                        <?= form_hidden('id', $row['juego_id']) ?>
+                                        <?= form_hidden('titulo', $row['juego_nombre']) ?>
+                                        <?= form_hidden('precio', $row['juego_precio']) ?>
+                                        <?= form_submit('comprar', 'Agregar al carrito', "class='btn btn-primary'") ?>
+                                    <?= form_close() ?>
+
+                                    <a href="#" class="btn btn-secondary">Comprar</a>
+                                <?php else: ?>
+                                    <a href="<?= base_url('inicio') ?>" class="btn btn-primary">Inicia sesión</a>
+                                <?php endif; ?>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+   
+    
+
+
+
+
 
 <div class="contenido-principal">
     <div class="container my-5 d-flex justify-content-center align-items-center">
         <h1 class="text-center mb-4 titulo-categoria">Juegos de Aventura</h1>
+
+
+
+        
+<?php foreach ($productos as $row): ?>
+    <div class="col-lg-2 col-md-4">
+        <div class="card h-100">
+            <img src="<?= base_url('assets/uploads/' . $row['juego_imagen']) ?>" class="card-img-top" alt="<?= esc($row['juego_nombre']) ?>">
+
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title fw-bold"><?= esc($row['juego_nombre']) ?></h5>
+                <p class="card-text">Desde <span class="fw-bold">$<?= esc($row['juego_precio']) ?> ARS</span></p>
+                
+                <div class="mt-auto d-flex flex-column gap-2">
+                <?php if (session('isLoggedIn')): ?>
+                    <?= form_open('agregar_carrito') ?>
+                        <?= form_hidden('id', $row['juego_id']) ?>
+                        <?= form_hidden('titulo', $row['juego_nombre']) ?>
+                        <?= form_hidden('precio', $row['juego_precio']) ?>
+                        <?= form_submit('comprar', 'Agregar al carrito', "class='btn btn-primary'") ?>
+                    <?= form_close() ?>
+
+                    <a href="#" class="btn btn-secondary">Comprar</a>
+                <?php else: ?>
+                    <a href="<?= base_url('inicio') ?>" class="btn btn-primary">Inicia sesión</a>
+                <?php endif; ?>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>
 
 
         <div class=" row g-4 justify-content-center">

@@ -8,6 +8,7 @@
                 <th>Nombre</th>
                 <th>Plataforma</th>
                 <th>Descripcion</th>
+                <th>Categoria</th>
                 <th>Precio</th>
                 <th>Stock</th>
                 <th>Estado</th>
@@ -25,6 +26,7 @@
                 <td style="max-width: 200px; white-space: normal; word-wrap: break-word;">
                     <?= esc($producto['juego_descripcion']) ?>
                 </td>
+                <td><?= esc($producto['categoria_descripcion']) ?></td>
                 <td>$<?= esc($producto['juego_precio']) ?></td>
                 <td><?= esc($producto['juego_stock']) ?></td>
                 <td>
