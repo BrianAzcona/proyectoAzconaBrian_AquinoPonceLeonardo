@@ -37,6 +37,7 @@ class JuegoModel extends Model
     {
         return $this->select('tab_juegos.*, tab_categoria.categoria_descripcion')
                     ->join('tab_categoria', 'tab_categoria.categoria_id = tab_juegos.categoria_id')
+                    ->where('tab_juegos.juego_estado', 1)
                     ->findAll();
     }
 }

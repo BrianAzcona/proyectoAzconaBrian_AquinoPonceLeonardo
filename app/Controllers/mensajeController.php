@@ -28,7 +28,7 @@ class MensajeController extends BaseController
             'asunto'     => 'required|max_length[30]',
             'num_orden'  => 'permit_empty|max_length[50]',
             'plataforma' => 'permit_empty|max_length[100]',
-            'consulta'   => 'required|max_length[50]'
+            'consulta'   => 'required|max_length[255]'
         ], [
             'apellido' => [
                 'required'   => 'El apellido es obligatorio.',
@@ -55,7 +55,7 @@ class MensajeController extends BaseController
             ],
             'consulta' => [
                 'required'   => 'La consulta es obligatoria.',
-                'max_length' => 'La consulta no puede tener más de 50 caracteres.'
+                'max_length' => 'La consulta no puede tener más de 255 caracteres.'
             ]
         ]);
         
@@ -88,11 +88,11 @@ class MensajeController extends BaseController
             . view("plantillas/footer_view.php");
     }
 
-    public function producto(): string {
+    public function consultasAdmin(): string {
         $data['titulo'] = "Consultas";
         $model = new MensajeModel();
         $data['consultas'] = $model->findAll();
-        return view('plantillas/header_view.php', $data).view("plantillas/nav_view.php").view("contenido\productos_view.php", $data).view("plantillas/footer_view.php");
+        return view('plantillas/header_view.php', $data).view("plantillas/nav_view.php").view("contenidoAdmin\consultas_view.php", $data).view("plantillas/footer_view.php");
     }
 
     
