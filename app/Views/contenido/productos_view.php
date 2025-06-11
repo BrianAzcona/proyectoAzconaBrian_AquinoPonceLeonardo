@@ -32,7 +32,6 @@
                                 <?= form_open('agregar_carrito') ?>
                                 <?= form_hidden('id', $row['juego_id']) ?>
                                 <?= form_hidden('nombre', $row['juego_nombre']) ?>
-                                <?= form_hidden('cantidad', (string)1) ?>
                                 <?= form_hidden('precio', $row['juego_precio']) ?>
                                 <?= form_submit('comprar', 'Agregar al carrito', "class='btn btn-primary'") ?>
                                 <?= form_close() ?>

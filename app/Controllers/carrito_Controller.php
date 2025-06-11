@@ -42,9 +42,9 @@ class Carrito_controller extends BaseController
         $cart = \Config\Services::cart();
         $producto = [
             'id'      => $this->request->getPost('id'),
-            'qty'     => $this->request->getPost('cantidad'),
-            'price'   => $this->request->getPost('precio'),
             'name'    => $this->request->getPost('nombre'),
+            'price'   => $this->request->getPost('precio'),
+            'qty'     => 1
         ];
 
         $cart->insert($producto);

@@ -26,7 +26,7 @@
         ?>
         <tr>
             <td><?= $i++ ?></td>
-            <td><?= esc($item['id']) ?></td>
+            <td><?= esc($item['name']) ?></td>
             <td>$ <?= number_format($item['price'], 2) ?></td>
             <td><?= esc($item['qty']) ?></td>
             <td>$ <?= number_format($item['subtotal'], 2) ?></td>
