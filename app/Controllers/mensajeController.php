@@ -87,4 +87,13 @@ class MensajeController extends BaseController
             . view("contenido/contacto.php", $data)
             . view("plantillas/footer_view.php");
     }
+
+    public function producto(): string {
+        $data['titulo'] = "Consultas";
+        $model = new MensajeModel();
+        $data['consultas'] = $model->findAll();
+        return view('plantillas/header_view.php', $data).view("plantillas/nav_view.php").view("contenido\productos_view.php", $data).view("plantillas/footer_view.php");
+    }
+
+    
 }
