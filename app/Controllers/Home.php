@@ -34,6 +34,22 @@ class Home extends BaseController
         return view('plantillas/header_view.php', $data).view("plantillas/nav_view.php").view("contenido\productos_view.php", $data).view("plantillas/footer_view.php");
     }
 
+    public function productosAside($nombreCategoria): string {
+        $data['titulo'] = "Productos";
+        $model = new JuegoModel();
+        $data['productos'] = $model
+        ->select('tab_juegos.*, tab_categoria.categoria_descripcion')
+        ->join('tab_categoria', 'tab_categoria.categoria_id = tab_juegos.categoria_id')
+        ->where('tab_categoria.categoria_descripcion', urldecode($nombreCategoria))
+        ->where('tab_juegos.juego_estado', 1)
+        ->findAll();
+
+        return view('plantillas/header_view.php', $data)
+         . view('plantillas/nav_view.php')
+         . view('contenido/productos_view.php', $data)
+         . view('plantillas/footer_view.php');
+        }
+
     public function terminosYcondiciones(): string {
         $data['titulo'] = "terminos de Uso";
         return view('plantillas/header_view.php', $data).view("plantillas/nav_view.php").view("contenido/terminosyusos.php").view("plantillas/footer_view.php");

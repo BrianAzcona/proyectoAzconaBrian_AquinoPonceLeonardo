@@ -20,6 +20,8 @@ class Carrito_controller extends BaseController
 
     public function ver_carrito()
     {
+        
+    $cart = \Config\Services::cart();
     $items = $this->cart->contents();
 
     // Ahora le agregamos también el título
@@ -37,7 +39,7 @@ class Carrito_controller extends BaseController
 
     public function agregar_carrito()
     {
-        
+        $cart = \Config\Services::cart();
         $producto = [
             'id'      => $this->request->getPost('id'),
             'qty'     => $this->request->getPost('cantidad'),
@@ -45,7 +47,7 @@ class Carrito_controller extends BaseController
             'name'    => $this->request->getPost('nombre'),
         ];
 
-        $this->cart->insert($producto);
+        $cart->insert($producto);
 
         return redirect()->to('ver_carrito');
     }

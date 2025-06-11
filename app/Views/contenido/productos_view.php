@@ -2,9 +2,9 @@
     <aside class="menu-categorias">
         <h2>Categorías</h2>
         <ul>
-            <li><a href="#accion">Acción</a></li>
-            <li><a href="#aventura">Aventura</a></li>
-            <li><a href="#carreras">Carreras</a></li>
+            <li><a href="<?= base_url('productos/categoria/Aventura') ?>">Aventura</a></li>
+            <li><a href="<?= base_url('productos/categoria/Terror') ?>">Terror</a></li>
+            <li><a href="<?= base_url('productos/categoria/Carreras') ?>">Carreras</a></li>
             <li><a href="#rpg">RPG</a></li>
             <li><a href="#estrategia">Estrategia</a></li>
             <li><a href="#deportes">Deportes</a></li>
@@ -13,7 +13,6 @@
     </aside>
     <div class="contenido-principal">
         <div class="container my-5 d-flex justify-content-center align-items-center">
-            <h1 class="text-center mb-4 titulo-categoria">Juegos de Aventura</h1>
             <div class=" row g-4 justify-content-center">
                 <?php foreach ($productos as $row): ?>
                 <div class="col-lg-2 col-md-4">
@@ -32,15 +31,15 @@
                                 <?php if (session('isLoggedIn')): ?>
                                 <?= form_open('agregar_carrito') ?>
                                 <?= form_hidden('id', $row['juego_id']) ?>
-                                <?= form_hidden('titulo', $row['juego_nombre']) ?>
-                                <?= form_hidden('cantidad', $row['juego_stock']) ?>
+                                <?= form_hidden('nombre', $row['juego_nombre']) ?>
+                                <?= form_hidden('cantidad', (string)1) ?>
                                 <?= form_hidden('precio', $row['juego_precio']) ?>
                                 <?= form_submit('comprar', 'Agregar al carrito', "class='btn btn-primary'") ?>
                                 <?= form_close() ?>
 
-                                <a href="#" class="btn btn-secondary">Comprar</a>
+
                                 <?php else: ?>
-                                <a href="<?= base_url('inicio') ?>" class="btn btn-primary">Inicia sesión</a>
+                                <a href="<?= base_url('inicio') ?>" class="btn btn-primary">Comprar</a>
                                 <?php endif; ?>
                             </div>
 

@@ -15,6 +15,9 @@ $routes->get('comercializacion', 'Home::comercializacion');
 
 $routes->get('productos', 'Home::producto');
 
+$routes->get('productos/categoria/(:any)', 'Home::productosAside/$1');
+
+
 $routes->get('Ayuda', 'Home::terminosYcondiciones');
 
 $routes->get('inicio', 'Home::inicio');
