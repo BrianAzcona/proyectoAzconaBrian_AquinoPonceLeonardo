@@ -49,6 +49,8 @@ $routes->get('eliminar_item/(:any)', 'carrito_controller::borrar/$1');
 
 $routes->get('vaciar_carrito/(:any)', 'carrito_controller::borrar/$1');
 
+$routes->get('guardar_venta', 'carrito_controller::guardar_venta');
+
 
 //Funciones para el administrador
 $routes->get('registrarProducto', 'juegoController::registroProducto');

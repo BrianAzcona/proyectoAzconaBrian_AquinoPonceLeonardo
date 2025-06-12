@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-06-2025 a las 14:43:01
+-- Tiempo de generación: 12-06-2025 a las 17:00:18
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -67,7 +67,21 @@ CREATE TABLE `tab_clientes` (
 
 INSERT INTO `tab_clientes` (`cliente_id`, `cliente_nombre`, `cliente_apellido`, `cliente_dni`, `cliente_correo`, `cliente_password`, `cliente_pais`, `cliente_provincia`, `cliente_ciudad`, `perfil_id`, `cliente_telefono`) VALUES
 (3, 'Brian', 'Azcona', 45759787, 'brianAdmin@gmail.com', '$2y$10$aUQr6MNlLtp0YKhHHZuF3OvIyySak2A6uoSHzgZ4vptoRae.SRY2.', 'Argentina', 'Corrientes', 'Corrientes', 1, 2147483647),
-(4, 'Pepe', 'Pascual', 42569874, 'pepe@gmail.com', '$2y$10$rurJ8FSifNnistl8BZeNMOFkm4rB027Gg3Ak4y5PfTvAHQz4Bm2lO', 'Argentina', 'Corrientes', 'Corrientes', 2, 2147483647);
+(4, 'Pepe', 'Pascual', 42569874, 'pepe@gmail.com', '$2y$10$rurJ8FSifNnistl8BZeNMOFkm4rB027Gg3Ak4y5PfTvAHQz4Bm2lO', 'Argentina', 'Corrientes', 'Corrientes', 2, 2147483647),
+(5, 'pedro', 'pascal', 45759786, 'pedro@gmail.com', '$2y$10$u0zeRtDWDf5q93jBnnUZMuL8HhIVo1PF7JvBACbDLJv3Y21sLg3rm', 'Argentina', 'corrientes', 'corrientes', 2, 2147483647);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tab_detalleventa`
+--
+
+CREATE TABLE `tab_detalleventa` (
+  `venta_id` int(11) NOT NULL,
+  `juego_id` int(11) NOT NULL,
+  `detalle_cantidad` int(11) NOT NULL,
+  `detalle_precio` decimal(10,0) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -122,6 +136,18 @@ CREATE TABLE `tab_perfil` (
   `perfil_descripcion` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tab_ventas`
+--
+
+CREATE TABLE `tab_ventas` (
+  `ventas_id` int(11) NOT NULL,
+  `cliente_id` int(11) NOT NULL,
+  `ventas_fecha` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Índices para tablas volcadas
 --
@@ -157,6 +183,12 @@ ALTER TABLE `tab_perfil`
   ADD PRIMARY KEY (`id_perfil`);
 
 --
+-- Indices de la tabla `tab_ventas`
+--
+ALTER TABLE `tab_ventas`
+  ADD PRIMARY KEY (`ventas_id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -170,7 +202,7 @@ ALTER TABLE `tab_categoria`
 -- AUTO_INCREMENT de la tabla `tab_clientes`
 --
 ALTER TABLE `tab_clientes`
-  MODIFY `cliente_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `cliente_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `tab_juegos`
@@ -189,6 +221,12 @@ ALTER TABLE `tab_mensaje`
 --
 ALTER TABLE `tab_perfil`
   MODIFY `id_perfil` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `tab_ventas`
+--
+ALTER TABLE `tab_ventas`
+  MODIFY `ventas_id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

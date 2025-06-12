@@ -40,7 +40,7 @@
             <td><strong>$ <?= number_format($total, 2) ?></strong></td>
             <td>
                 <a href="<?= base_url('vaciar_carrito/all') ?>" class="btn btn-warning btn-sm">Vaciar carrito</a>
-                <a href="<?= base_url('ventas') ?>" class="btn btn-primary btn-sm">Ordenar compra</a>
+                <a href="<?= base_url('guardar_venta') ?>" class="btn btn-primary btn-sm">Ordenar compra</a>
             </td>
         </tr>
     </tbody>
