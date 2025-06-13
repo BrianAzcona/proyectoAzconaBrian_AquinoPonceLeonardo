@@ -39,7 +39,7 @@
                 <td>
                     <a href="<?= base_url('productos/editar/' . $producto['juego_id']) ?>"
                         class="btn btn-sm btn-primary">Editar</a>
-                    <a href="<?= base_url('productos/eliminar/' . $producto['juego_id']) ?>"
+                    <a href="<?= base_url('eliminarJuego/' . $producto['juego_id']) ?>"
                         class="btn btn-sm btn-danger">Eliminar</a>
                 </td>
             </tr>

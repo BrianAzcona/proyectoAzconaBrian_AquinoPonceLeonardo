@@ -70,3 +70,5 @@ $routes->get('productos/editar/(:num)', 'JuegoController::editarJuego/$1');
 $routes->post('actualizarJuego', 'JuegoController::actualizarJuego');
 
 $routes->get('productos/eliminar/(:num)', 'JuegoController::eliminarJuego/$1');
+
+$routes->get('eliminarJuego/(:num)', 'JuegoController::eliminar_juego/$1');

@@ -260,6 +260,20 @@ public function eliminarJuego($id)
     return redirect()->to(base_url('gestionarProductos'))->with('mensaje', 'Producto eliminado correctamente.');
 }
 
+public function eliminar_juego($id = null)
+{
+    // Cambiar el estado del libro a '0' (inactivo)
+    $data = [
+        'juego_estado' => '0'
+    ];
+
+    $juegoModel = new JuegoModel();
+    $juegoModel->update($id, $data);
+
+    return redirect()->route('gestionarProductos');
+}
+
+
     
     
     /*public function crear()
