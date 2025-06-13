@@ -7,6 +7,14 @@
 <h2 class="text-center alert alert-danger mt-4">El carrito está vacío</h2>
 <?php else: ?>
 
+<?php if (session()->getFlashdata('error')): ?>
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <?= session()->getFlashdata('error') ?>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+</div>
+<?php endif; ?>
+
+
 <table class="table table-bordered table-striped mt-4">
     <thead>
         <tr>

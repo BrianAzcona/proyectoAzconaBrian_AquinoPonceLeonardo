@@ -25,7 +25,7 @@
                     <a class="nav-link" href="<?php echo base_url('registrarProducto'); ?>">Registrar producto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('productos/gestionar'); ?>">Gestionar productos</a>
+                    <a class="nav-link" href="<?php echo base_url('gestionarProductos'); ?>">Gestionar productos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link fw-bold"><?php echo esc(session()->get('nombre')); ?></a>

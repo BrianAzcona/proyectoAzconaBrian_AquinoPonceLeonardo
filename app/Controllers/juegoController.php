@@ -163,6 +163,16 @@ public function form_agregar_juego() {
                 . view('contenidoAdmin/listarProductos_view.php', $data)
                 . view('plantillas/footer_view');
     }
+    public function gestionarProducto() {
+        $model = new JuegoModel();
+        $data['productos'] = $model->obtenerJuegosConCategoria();
+        $data['titulo'] = "Gestionar Productos";
+        return view('plantillas/header_view', $data)
+                . view('plantillas/nav_view')
+                . view('contenidoAdmin/gestionarProductos_view.php', $data)
+                . view('plantillas/footer_view');
+    }
+    
     /*public function crear()
     {
         helper('form');

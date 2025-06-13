@@ -68,12 +68,13 @@ class Carrito_controller extends BaseController
         $juego = $juegos->where('juego_id', $item['id'])->first();
         if ($juego['juego_stock'] < $item['qty']) {
             // Mensaje de producto sin stock
+            session()->setFlashdata('error', 'Uno o más productos no tienen stock suficiente.');
             return redirect()->route('ver_carrito');
         }
     }
 
     $data = array(
-        'cliente_id'   => session('id'),
+        'cliente_id' => session('cliente_id'),
         'ventas_fecha'  => date('Y-m-d'),
     );
     $venta_id = $venta->insert($data);
@@ -81,7 +82,7 @@ class Carrito_controller extends BaseController
     $cart1 = $cart->contents();
     foreach ($cart1 as $item) {
         $detalle_venta = array(
-            'id_venta'         => $venta_id,
+            'ventas_id'         => $venta_id,
             'juego_id'      => $item['id'],
             'detalle_cantidad' => $item['qty'],
             'detalle_precio'   => $item['price']
@@ -100,8 +101,10 @@ class Carrito_controller extends BaseController
     }
 
     // mensaje de agradecimiento por la compra
+    session()->setFlashdata('compra_exitosa', '¡Gracias por tu compra! Tu pedido fue procesado con éxito.');
+
     $cart->destroy();
-    return redirect()->route('producto');
+    return redirect()->route('productos');
 }
 
 

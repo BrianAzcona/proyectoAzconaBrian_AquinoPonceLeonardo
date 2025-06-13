@@ -60,3 +60,5 @@ $routes->post('registrarJuego', 'juegoController::agregarJuego');
 $routes->get('listarJuegos', 'juegoController::listaProductos');
 
 $routes->get('consultasAdministrador', 'mensajeController::consultasAdmin');
+
+$routes->get('gestionarProductos', 'juegoController::gestionarProducto');
