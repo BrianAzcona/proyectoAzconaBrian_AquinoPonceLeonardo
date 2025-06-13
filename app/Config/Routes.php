@@ -62,3 +62,5 @@ $routes->get('listarJuegos', 'juegoController::listaProductos');
 $routes->get('consultasAdministrador', 'mensajeController::consultasAdmin');
 
 $routes->get('gestionarProductos', 'juegoController::gestionarProducto');
+
+$routes->get('gestionarProductos', 'juegoController::actualizarProducto');
