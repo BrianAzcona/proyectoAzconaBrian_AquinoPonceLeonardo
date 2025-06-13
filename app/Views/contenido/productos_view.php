@@ -33,7 +33,7 @@
                             <h5 class="card-title fw-bold"><?= esc($row['juego_nombre']) ?></h5>
                             <p class="card-text">
                                 Desde <span class="fw-bold">$<?= esc($row['juego_precio']) ?> ARS</span><br>
-                                Plataforma: <span class="fw-bold"><?= esc($row['juego_plataforma']) ?> ARS</span><br>
+                                Plataforma: <span class="fw-bold"><?= esc($row['juego_plataforma']) ?> </span><br>
                                 Stock: <span class="fw-bold"><?= esc($row['juego_stock']) ?></span> unidades
                             </p>
 

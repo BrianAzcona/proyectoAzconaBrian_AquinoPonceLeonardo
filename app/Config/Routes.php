@@ -64,3 +64,9 @@ $routes->get('consultasAdministrador', 'mensajeController::consultasAdmin');
 $routes->get('gestionarProductos', 'juegoController::gestionarProducto');
 
 $routes->get('gestionarProductos', 'juegoController::actualizarProducto');
+
+$routes->get('productos/editar/(:num)', 'JuegoController::editarJuego/$1');
+
+$routes->post('actualizarJuego', 'JuegoController::actualizarJuego');
+
+$routes->get('productos/eliminar/(:num)', 'JuegoController::eliminarJuego/$1');
