@@ -39,13 +39,28 @@
     <header>
         <div class="header-container container d-flex flex-wrap align-items-center justify-content-between gap-3">
 
+            <?php
+                $perfil_id = session()->get('perfil_id');
+                $isCliente = ($perfil_id == 2);
+                $isInvitado = !session()->get('isLoggedIn');
+                $isAdmin = ($perfil_id == 1);
+
+                if ($isCliente || $isInvitado) {
+                    $linkLogo = base_url('/');
+                } elseif ($isAdmin) {
+                    $linkLogo = base_url('admin/inicioAdmin');
+                } else {
+                    $linkLogo = base_url('/');
+                }
+            ?>
             <div class="logo d-flex align-items-center gap-2">
-                <a href="<?= base_url('/'); ?>">
+                <a href="<?= $linkLogo; ?>">
                     <img src="<?= base_url('assets/img/logo.png') ?>" class="img-thumbnail" width="70" height="70"
                         alt="Logo de la compañía">
                 </a>
                 <h2 class="nombre-empresa1">CODI GAMES</h2>
             </div>
+
 
             <form class="d-flex flex-grow-1 justify-content-center my-2" role="search">
                 <input class="form-control w-100" style="max-width: 600px;" type="search" placeholder="Buscar juegos..."
@@ -53,16 +68,18 @@
             </form>
 
             <div class="acciones d-flex align-items-center gap-3">
-                <?php
-                    $perfil_id = session()->get('perfil_id');
-                    $isCliente = ($perfil_id == 2);
-                    $isInvitado = !session()->get('isLoggedIn');
-                ?>
 
-                <?php if ($isCliente || $isInvitado): ?>
+
+                <?php if ($isCliente): ?>
                 <a class="carro-de-compras" href="<?= base_url('ver_carrito'); ?>">
-                    <i class="fas fa-cart-shopping"></i></a>
+                    <i class="fas fa-cart-shopping"></i>
+                </a>
+                <?php elseif ($isInvitado): ?>
+                <a class="carro-de-compras" href="<?= base_url('inicio'); ?>">
+                    <i class="fas fa-cart-shopping"></i>
+                </a>
                 <?php endif; ?>
+
 
                 <?php if (session()->get('isLoggedIn')): ?>
                 <span class="fw-bold"
