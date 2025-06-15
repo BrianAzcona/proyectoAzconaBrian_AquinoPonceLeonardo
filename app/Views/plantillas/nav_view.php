@@ -28,10 +28,12 @@
                     <a class="nav-link" href="<?php echo base_url('gestionarProductos'); ?>">Gestionar productos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fw-bold"><?php echo esc(session()->get('nombre')); ?></a>
+                    <a class="nav-link" href="<?= base_url('admin/inicioAdmin'); ?>">
+                        <?= esc(session()->get('cliente_nombre')) ?>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-danger" href="<?php echo base_url('logout'); ?>">Salir</a>
+                    <a class="nav-link text-danger" href="<?php echo base_url('cliente/cerrarSesion'); ?>">Salir</a>
                 </li>
 
                 <?php else: ?>
