@@ -19,7 +19,7 @@
                     <a class="nav-link" href="<?php echo base_url('listarJuegos'); ?>">Listar productos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('ventas'); ?>">Listar ventas</a>
+                    <a class="nav-link" href="<?php echo base_url('verVentas'); ?>">Listar ventas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url('registrarProducto'); ?>">Registrar producto</a>

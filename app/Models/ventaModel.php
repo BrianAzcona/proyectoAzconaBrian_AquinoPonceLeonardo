@@ -12,10 +12,3 @@ class VentaModel extends Model
 
     protected $useTimestamps = false;
 }
-
-
-
-
-
-
-

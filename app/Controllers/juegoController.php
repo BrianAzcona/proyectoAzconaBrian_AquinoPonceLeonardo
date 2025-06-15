@@ -273,45 +273,4 @@ public function eliminar_juego($id = null)
     return redirect()->route('gestionarProductos');
 }
 
-
-    
-    
-    /*public function crear()
-    {
-        helper('form');
-
-        if (! $this->request->is('post')) {
-            return view('plantillas/header_view', ['titulo' => 'Nuevo Juego'])
-                . view('plantillas/nav_view')
-                . view('contenido/juego_form')
-                . view('plantillas/footer_view');
-        }
-
-        $validation = \Config\Services::validation();
-
-        $validation->setRules([
-            'juego_nombre'      => 'required',
-            'juego_plataforma'  => 'required',
-            'juego_descripcion' => 'required',
-            'juego_stock'       => 'required|integer',
-            'juego_precio'      => 'required|decimal',
-            'categoria_id'      => 'required|integer',
-            'juego_estado'      => 'required'
-        ]);
-
-        $data = $this->request->getPost(array_keys($validation->getRules()));
-
-        if (! $validation->run($data)) {
-            return view('plantillas/header_view', ['titulo' => 'Nuevo Juego'])
-                . view('plantillas/nav_view')
-                . view('contenido/juego_form', ['validation' => $validation])
-                . view('plantillas/footer_view');
-        }
-
-        $validData = $validation->getValidated();
-        $model = new JuegoModel();
-        $model->insert($validData);
-
-        return redirect()->to('/juegos');
-    }*/
 }
