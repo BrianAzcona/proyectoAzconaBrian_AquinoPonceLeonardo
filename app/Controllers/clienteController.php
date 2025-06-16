@@ -166,6 +166,8 @@ class ClienteController extends BaseController
     session()->set([
         'cliente_id'      => $cliente['cliente_id'],
         'cliente_nombre'  => $cliente['cliente_nombre'],
+        'cliente_apellido'  => $cliente['cliente_apellido'],
+        
         'cliente_correo'  => $cliente['cliente_correo'],
         'perfil_id'       => $cliente['perfil_id'],
         'isLoggedIn'      => true,

@@ -80,19 +80,19 @@
                 </a>
                 <?php endif; ?>
 
-
                 <?php if (session()->get('isLoggedIn')): ?>
                 <span class="fw-bold"
                     style="font-size: 1.1rem; color: white; background-color: transparent; padding: 4px 10px;">
-                    <?= esc(session()->get('cliente_nombre')) ?>
+                    <?= esc(session()->get('cliente_nombre') . ' ' . session()->get('cliente_apellido')) ?>
                 </span>
 
                 <a class="usuario" href="<?= base_url('cliente/cerrarSesion'); ?>">
-                    <i class="fas fa-sign-out-alt" title="Cerrar sesión"></i>
-                </a>
+                    <img src="<?= base_url('assets/img/cerrar-sesion.png'); ?>" alt="Cerrar sesión"
+                        style="width: 28px; height: 28px; vertical-align: middle;"> </a>
                 <?php else: ?>
                 <a class="usuario" href="<?= base_url('inicio'); ?>">
-                    <i class="fas fa-circle-user" title="Iniciar sesión"></i>
+                    <img src="<?= base_url('assets/img/acceso.png'); ?>" alt="Cerrar sesión"
+                        style="width: 35px; height: 35px; vertical-align: middle;"> </a>
                 </a>
                 <?php endif; ?>
             </div>
