@@ -66,13 +66,10 @@
                     class="card-img-top" alt="Producto 1">
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title fw-bold">The Last Of Us Part II</h5>
-                    <p class="card-text">
-                        Desde <span class="fw-bold">$40.584,45 ARS</span>
+                    <p class="card-text  w-100">
+                        Desde <span class="fw-bold  w-100 ">$40.584,45 ARS</span>
                     </p>
-                    <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
+                    
 
                 </div>
             </div>
@@ -87,10 +84,7 @@
                     <p class="card-text">
                         Desde <span class="fw-bold">$3.524,65 ARS</span>
                     </p>
-                    <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
+                
                 </div>
             </div>
         </div>
@@ -105,8 +99,7 @@
                         Desde <span class="fw-bold">$23.484,95 ARS</span>
                     </p>
                     <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
+                       
                     </div>
                 </div>
             </div>
@@ -122,8 +115,7 @@
                         Desde <span class="fw-bold">$58.654,21 ARS</span>
                     </p>
                     <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
+                        
                     </div>
                 </div>
             </div>
@@ -139,8 +131,7 @@
                         Desde <span class="fw-bold">$45.965,46 ARS</span>
                     </p>
                     <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
+                       
                     </div>
                 </div>
             </div>
@@ -158,10 +149,7 @@
                     <p class="card-text">
                         Desde <span class="fw-bold">$16.625,45 ARS</span>
                     </p>
-                    <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -175,10 +163,7 @@
                     <p class="card-text">
                         Desde <span class="fw-bold">$78.561,26 ARS</span>
                     </p>
-                    <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -192,10 +177,7 @@
                     <p class="card-text">
                         Desde <span class="fw-bold">$12.854,62 ARS</span>
                     </p>
-                    <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -209,10 +191,7 @@
                     <p class="card-text">
                         Desde <span class="fw-bold">$24.789,12 ARS</span>
                     </p>
-                    <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
+                  
                 </div>
             </div>
         </div>
@@ -226,10 +205,7 @@
                     <p class="card-text">
                         Desde <span class="fw-bold">$26.359,84 ARS</span>
                     </p>
-                    <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -253,10 +229,7 @@
                     <p class="card-text">
                         Desde <span class="fw-bold">$65.548,69 ARS</span>
                     </p>
-                    <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
+                    
 
                 </div>
             </div>
@@ -272,10 +245,7 @@
                     <p class="card-text">
                         Desde <span class="fw-bold">$61.325,47 ARS</span>
                     </p>
-                    <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -290,10 +260,7 @@
                     <p class="card-text">
                         Desde <span class="fw-bold">$59.612,65 ARS</span>
                     </p>
-                    <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -308,10 +275,7 @@
                     <p class="card-text">
                         Desde <span class="fw-bold">$33.963,75 ARS</span>
                     </p>
-                    <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -326,10 +290,7 @@
                     <p class="card-text">
                         Desde <span class="fw-bold">$28.651,84 ARS</span>
                     </p>
-                    <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -347,10 +308,7 @@
                     <p class="card-text">
                         Desde <span class="fw-bold">$21.452,65 ARS</span>
                     </p>
-                    <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -365,10 +323,7 @@
                     <p class="card-text">
                         Desde <span class="fw-bold">$38.895,47</span>
                     </p>
-                    <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -383,10 +338,7 @@
                     <p class="card-text">
                         Desde <span class="fw-bold">$36.457,45 ARS</span>
                     </p>
-                    <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -401,10 +353,7 @@
                     <p class="card-text">
                         Desde <span class="fw-bold">$32.548,56 ARS</span>
                     </p>
-                    <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -419,19 +368,66 @@
                     <p class="card-text">
                         Desde <span class="fw-bold">$41.568,14 ARS</span>
                     </p>
-
-                    <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
 
-/
+        <div class="carousel-item active">
+            <div class="d-flex">
+                <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2021/09/god-war-ragnarok-2466115.jpg"
+                    class="img-fluid w-50" alt="God of War">
+                <img src="https://live.staticflickr.com/65535/52441662842_0869ee2900_h.jpg" class="img-fluid w-50"
+                    alt="God of War img">
+            </div>
+        </div>
+
+        <div class="carousel-item active">
+            <div class="d-flex">
+                <img src="https://i.blogs.es/2e090b/the-last-of-us-part-ii-remastered-analisis/1366_2000.jpeg"
+                    class="img-fluid w-50" alt="The Last of Us 2">
+                <img src="https://blog.latam.playstation.com/uploads/sites/3/2024/12/3112e2dc99d6a7a6efd7ef5a73ca6a16089e50f1.jpg"
+                    class="img-fluid w-50" alt="the last of us img">
+
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="d-flex">
+                <img src="https://i.blogs.es/fc72f2/maxresdefault/1366_2000.jpeg" class="img-fluid w-50" alt="Maxres">
+                <img src="https://cdn.thewirecutter.com/wp-content/media/2022/03/elden-ring-2048px-0002.jpg?auto=webp&quality=75&width=1024"
+                    class="img-fluid w-50" alt="elden ring">
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="d-flex">
+                <img src="https://static.bandainamcoent.eu/high/dragon-ball/dragon-ball-sparking-zero/01-news/dbsz-announcement-thumbnail.jpg"
+                    class="img-fluid w-50" alt="Dragon Ball">
+                <img src="https://static.bandainamcoent.eu/high/dragon-ball/dragon-ball-sparking-zero/01-news/dbsz_modesshowcase/dbsz_splitscreen.jpg"
+                    class="img-fluid w-50" alt="pelea">
+            </div>
+        </div>
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
 
 <div class="container my-5 d-flex justify-content-center align-items-center">
     <h1 class="text-center mb-4 productos-populares">Tarjetas de Regalo</h1>
@@ -447,11 +443,6 @@
                     <p class="card-text">
                         Desde <span class="fw-bold">$10,75 USD</span>
                     </p>
-                    <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
-
                 </div>
             </div>
         </div>
@@ -464,10 +455,6 @@
                     <p class="card-text">
                         Desde <span class="fw-bold">$6,47 USD</span>
                     </p>
-                    <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -481,10 +468,6 @@
                     <p class="card-text">
                         Desde <span class="fw-bold">$5.00 USD</span>
                     </p>
-                    <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -498,10 +481,7 @@
                     <p class="card-text">
                         Desde <span class="fw-bold">$ 7,64 USD</span>
                     </p>
-                    <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -515,10 +495,7 @@
                     <p class="card-text">
                         Desde <span class="fw-bold">$5,84 USD</span>
                     </p>
-                    <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -535,10 +512,7 @@
                     <p class="card-text">
                         Desde <span class="fw-bold">$6,85 USD</span>
                     </p>
-                    <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -551,10 +525,7 @@
                     <p class="card-text">
                         Desde <span class="fw-bold">$3,26 USD</span>
                     </p>
-                    <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -568,10 +539,7 @@
                     <p class="card-text">
                         Desde <span class="fw-bold">$8,65 USD</span>
                     </p>
-                    <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -585,10 +553,7 @@
                     <p class="card-text">
                         Desde <span class="fw-bold">$3,80 USD</span>
                     </p>
-                    <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -602,10 +567,7 @@
                     <p class="card-text">
                         Desde <span class="fw-bold">$11,59 USD</span>
                     </p>
-                    <div class="mt-auto d-flex flex-column gap-2">
-                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
+                  
                 </div>
             </div>
         </div>
