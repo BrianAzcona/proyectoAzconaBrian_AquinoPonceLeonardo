@@ -612,18 +612,5 @@
     </div>
 </div>
 
-/
 
 
-<div class="promo-card">
-    <h5>¡Oferta Especial!</h5>
-    <p>Compra ahora y obtén un 50% de descuento.</p>
-    <a href="#">Ver más</a>
-</div>
-
-
-<div id="videoCard" class="video-card">
-    <h5>Video Promocional</h5>
-    <iframe src="https://www.youtube.com/embed/32yBUjxv4gU?si=DIEWxc-dl8Uuc13z" frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
