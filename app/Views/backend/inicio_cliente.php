@@ -20,7 +20,7 @@
     </p>
 
     <div style="margin-top: 30px;">
-        <a href="<?= base_url('/') ?>" style="text-decoration: none; 
+        <a href="<?= base_url('productos') ?>" style="text-decoration: none; 
                   background-color: #3498db; 
                   color: white; 
                   padding: 12px 28px; 
