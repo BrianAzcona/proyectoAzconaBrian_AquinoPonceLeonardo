@@ -1,3 +1,8 @@
+<?php if (session()->getFlashdata('mensaje_error')): ?>
+<div class="alert alert-danger">
+    <?= session()->getFlashdata('mensaje_error') ?>
+</div>
+<?php endif; ?>
 <?php if (isset($mensaje)): ?>
 <!-- Modal -->
 <div class="modal fade" id="mensajeModal" tabindex="-1" aria-labelledby="mensajeModalLabel" aria-hidden="true">
@@ -17,6 +22,8 @@
         </div>
     </div>
 </div>
+
+
 
 <script>
 // Mostrar modal automáticamente

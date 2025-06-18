@@ -49,28 +49,28 @@ $routes->get('eliminar_item/(:any)', 'carrito_controller::borrar/$1');
 
 $routes->get('vaciar_carrito/(:any)', 'carrito_controller::borrar/$1');
 
-$routes->get('guardar_venta', 'carrito_controller::guardar_venta');
+$routes->get('guardar_venta', 'carrito_controller::guardar_venta', ['filter' => 'filtroCliente']);
 
 
 //Funciones para el administrador
-$routes->get('registrarProducto', 'juegoController::registroProducto');
+$routes->get('registrarProducto', 'juegoController::registroProducto', ['filter' => 'filtroAdmin']);
 
-$routes->post('registrarJuego', 'juegoController::agregarJuego');
+$routes->post('registrarJuego', 'juegoController::agregarJuego', ['filter' => 'filtroAdmin']);
 
-$routes->get('listarJuegos', 'juegoController::listaProductos');
+$routes->get('listarJuegos', 'juegoController::listaProductos', ['filter' => 'filtroAdmin']);
 
-$routes->get('consultasAdministrador', 'mensajeController::consultasAdmin');
+$routes->get('consultasAdministrador', 'mensajeController::consultasAdmin', ['filter' => 'filtroAdmin']);
 
-$routes->get('gestionarProductos', 'juegoController::gestionarProducto');
+$routes->get('gestionarProductos', 'juegoController::gestionarProducto', ['filter' => 'filtroAdmin']);
 
-$routes->get('gestionarProductos', 'juegoController::actualizarProducto');
+$routes->get('gestionarProductos', 'juegoController::actualizarProducto', ['filter' => 'filtroAdmin']);
 
-$routes->get('productos/editar/(:num)', 'JuegoController::editarJuego/$1');
+$routes->get('productos/editar/(:num)', 'JuegoController::editarJuego/$1', ['filter' => 'filtroAdmin']);
 
-$routes->post('actualizarJuego', 'JuegoController::actualizarJuego');
+$routes->post('actualizarJuego', 'JuegoController::actualizarJuego', ['filter' => 'filtroAdmin']);
 
-$routes->get('productos/eliminar/(:num)', 'JuegoController::eliminarJuego/$1');
+$routes->get('productos/eliminar/(:num)', 'JuegoController::eliminarJuego/$1', ['filter' => 'filtroAdmin']);
 
-$routes->get('eliminarJuego/(:num)', 'JuegoController::eliminar_juego/$1');
+$routes->get('eliminarJuego/(:num)', 'JuegoController::eliminar_juego/$1', ['filter' => 'filtroAdmin']);
 
-$routes->get('verVentas', 'ventaController::ventasAdmin');
+$routes->get('verVentas', 'ventaController::ventasAdmin', ['filter' => 'filtroAdmin']);
