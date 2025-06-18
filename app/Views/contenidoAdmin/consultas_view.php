@@ -1,5 +1,19 @@
 <div class="container py-4">
-    <h2 class="mb-4">Consultas de Clientes</h2>
+    <div class="bg-gradient bg-info text-white py-3 px-4 rounded shadow text-center mb-4">
+        <h2 class="m-0 fw-semibold">Consultas de Clientes</h2>
+    </div>
+    <form method="get" class="mb-4">
+        <div class="row g-2">
+            <div class="col-md-10">
+                <input type="text" name="correo" class="form-control" placeholder="Buscar por correo electrónico"
+                    value="<?= isset($_GET['correo']) ? esc($_GET['correo']) : '' ?>">
+            </div>
+            <div class="col-md-2 d-flex gap-2">
+                <button class="btn btn-primary flex-fill" type="submit" style="white-space: nowrap;">Buscar</button>
+                <a href="<?= base_url('consultasAdministrador') ?>" class="btn btn-danger ">Mostrar Todos</a>
+            </div>
+        </div>
+    </form>
     <table class="table table-striped table-bordered align-middle">
         <thead class="table-dark">
             <tr>
@@ -16,8 +30,14 @@
             </tr>
         </thead>
         <tbody>
-            <?php $i = 1; ?>
+            <?php $i = 1; 
+                $correoFiltro = isset($_GET['correo']) ? trim($_GET['correo']) : '';
+            ?>
             <?php foreach ($consultas as $row): ?>
+            <?php 
+            if ($correoFiltro && stripos($row['correo'], $correoFiltro) === false) {
+                    continue;
+                }?>
             <tr>
                 <td><?= $i++ ?></td>
                 <td><?= esc($row['apellido']) ?></td>

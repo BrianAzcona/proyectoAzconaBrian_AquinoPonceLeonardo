@@ -1,5 +1,25 @@
 <div class="container py-4">
-    <h2 class="mb-4">Lista de Productos</h2>
+    <div class="bg-gradient bg-info text-white py-3 px-4 rounded shadow text-center mb-4">
+        <h2 class="m-0 fw-semibold">Lista de Productos</h2>
+    </div>
+    <form method="get" class="mb-4">
+        <div class="row g-2">
+            <div class="col-md-5">
+                <input type="text" name="nombre" class="form-control" placeholder="Buscar por nombre de juego"
+                    value="<?= isset($_GET['nombre']) ? esc($_GET['nombre']) : '' ?>">
+            </div>
+            <div class="col-md-4">
+                <input type="text" name="genero" class="form-control" placeholder="Buscar por género"
+                    value="<?= isset($_GET['genero']) ? esc($_GET['genero']) : '' ?>">
+            </div>
+            <div class="col-md-2 d-flex gap-2">
+                <button class="btn btn-primary flex-fill" type="submit" style="white-space: nowrap;">Buscar</button>
+                <a href="<?= base_url('listarJuegos') ?>" class="btn btn-danger flex-fill"
+                    style="white-space: nowrap;">Mostrar Todos</a>
+            </div>
+        </div>
+    </form>
+
     <table class="table table-striped table-bordered align-middle">
         <thead class="table-dark">
             <tr>
@@ -15,8 +35,23 @@
             </tr>
         </thead>
         <tbody>
-            <?php $i = 1; ?>
+
+
+            <?php $i = 1; 
+            $nombreFiltro = isset($_GET['nombre']) ? strtolower(trim($_GET['nombre'])) : '';
+            $generoFiltro = isset($_GET['genero']) ? strtolower(trim($_GET['genero'])) : '';
+            ?>
+
             <?php foreach ($productos as $producto): ?>
+            <?php
+                $nombreJuego = strtolower($producto['juego_nombre']);
+                $categoriaJuego = strtolower($producto['categoria_descripcion']);
+
+                if ( ($nombreFiltro && strpos($nombreJuego, $nombreFiltro) === false) ||
+                    ($generoFiltro && strpos($categoriaJuego, $generoFiltro) === false)) {
+                        continue;
+                }
+            ?>
             <tr>
                 <td><?= $i++ ?></td>
                 <td><img src="<?= base_url('assets/uploads/' . $producto['juego_imagen']) ?>" width="60" alt="imagen">

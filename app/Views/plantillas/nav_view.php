@@ -32,9 +32,7 @@
                         <?= esc(session()->get('cliente_nombre')) ?>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-danger" href="<?php echo base_url('cliente/cerrarSesion'); ?>">Salir</a>
-                </li>
+
 
                 <?php else: ?>
                 <!-- CLIENTE -->

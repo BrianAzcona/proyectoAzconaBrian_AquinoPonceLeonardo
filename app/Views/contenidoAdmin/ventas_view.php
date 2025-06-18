@@ -4,10 +4,13 @@
     </div>
     <form method="get" class="mb-4">
         <div class="input-group">
-            <input type="text" name="dni" class="form-control" placeholder="Filtrar por DNI"
+            <input type="text" name="dni" class="form-control" placeholder="Buscar por DNI"
                 value="<?= isset($_GET['dni']) ? esc($_GET['dni']) : '' ?>">
             <button class="btn btn-primary" type="submit">Buscar</button>
 
+            <?php if (isset($_GET['dni']) && $_GET['dni'] !== ''): ?>
+            <a href="<?= base_url('verVentas') ?>" class="btn btn-success">Mostrar Todas</a>
+            <?php endif; ?>
         </div>
     </form>
     <table class="table table-bordered table-hover align-middle">
@@ -101,6 +104,13 @@
                             <?php endforeach; ?>
                         </tbody>
                     </table>
+                    <?php
+                        $total = 0;
+                        foreach ($venta['detalles'] as $detalle) {
+                            $total += $detalle['detalle_precio'] * $detalle['detalle_cantidad'];
+                        }
+                    ?>
+                    <p class="mt-3"><strong>Total de la Factura:</strong> $<?= number_format($total, 2) ?></p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
