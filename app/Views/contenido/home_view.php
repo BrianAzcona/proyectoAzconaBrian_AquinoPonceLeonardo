@@ -419,35 +419,7 @@
     </button>
 </div>
 
-<div class="carousel-item">
-    <div class="d-flex">
-        <img src="https://i.blogs.es/fc72f2/maxresdefault/1366_2000.jpeg" class="img-fluid w-50" alt="Maxres">
-        <img src="https://cdn.thewirecutter.com/wp-content/media/2022/03/elden-ring-2048px-0002.jpg?auto=webp&quality=75&width=1024"
-            class="img-fluid w-50" alt="elden ring">
-    </div>
-</div>
 
-<div class="carousel-item">
-    <div class="d-flex">
-        <img src="https://static.bandainamcoent.eu/high/dragon-ball/dragon-ball-sparking-zero/01-news/dbsz-announcement-thumbnail.jpg"
-            class="img-fluid w-50" alt="Dragon Ball">
-        <img src="https://static.bandainamcoent.eu/high/dragon-ball/dragon-ball-sparking-zero/01-news/dbsz_modesshowcase/dbsz_splitscreen.jpg"
-            class="img-fluid w-50" alt="pelea">
-    </div>
-</div>
-
-</div>
-
-<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-</button>
-
-<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-</button>
-</div>
 
 
 <div class="container my-5 d-flex justify-content-center align-items-center">
