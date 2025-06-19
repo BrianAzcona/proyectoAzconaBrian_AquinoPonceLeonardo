@@ -9,7 +9,22 @@ class Home extends BaseController
     public function index(): string
     {
         $data['titulo'] = "Inicio";
-        return view('plantillas/header_view.php', $data).view("plantillas/nav_view.php").view("Views/contenido/home_view.php").view("plantillas/footer_view.php");
+        $model = new JuegoModel();
+        $productos = $model->obtenerJuegosConCategoria(); // ← Definís la variable correctamente
+    
+        // Agrupar por categoría_descripcion
+        $porCategoria = [];
+        foreach ($productos as $juego) {
+            $categoria = $juego['categoria_descripcion'];
+            $porCategoria[$categoria][] = $juego;
+        }
+    
+        $data['porCategoria'] = $porCategoria;
+    
+        return view('plantillas/header_view.php', $data)
+            . view("plantillas/nav_view.php")
+            . view("contenido/home_view.php", $data) // No uses "Views/" aquí
+            . view("plantillas/footer_view.php");
     }
 
     public function quienesSomos(): string {
