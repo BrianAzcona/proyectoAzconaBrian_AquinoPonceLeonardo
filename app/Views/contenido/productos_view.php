@@ -17,6 +17,7 @@
             <li><a href="<?= base_url('productos/categoria/Simulacion') ?>">Simulacion</a></li>
             <li><a href="<?= base_url('productos/categoria/Supervivencia') ?>">Supervivencia</a></li>
             <li><a href="<?= base_url('productos/categoria/Deportes') ?>">Deportes</a></li>
+            <li><a href="<?= base_url('productos/categoria/gift card') ?>">Gift Card</a></li>
         </ul>
     </aside>
     <div class="contenido-principal">
