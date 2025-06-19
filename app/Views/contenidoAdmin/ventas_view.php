@@ -3,16 +3,34 @@
         <h2 class="m-0 fw-semibold">🛒 Ventas Realizadas</h2>
     </div>
     <form method="get" class="mb-4">
-        <div class="input-group">
-            <input type="text" name="dni" class="form-control" placeholder="Buscar por DNI"
+        <div class="d-flex align-items-center gap-2">
+            <div class="input-group">
+                <span class="input-group-text">Desde</span>
+                <input type="date" name="fecha_desde" class="form-control"
+                    value="<?= isset($_GET['fecha_desde']) ? esc($_GET['fecha_desde']) : '' ?>">
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text">Hasta</span>
+                <input type="date" name="fecha_hasta" class="form-control"
+                    value="<?= isset($_GET['fecha_hasta']) ? esc($_GET['fecha_hasta']) : '' ?>">
+            </div>
+
+            <input type="text" name="dni" class="form-control" placeholder="Buscar por DNI" style="max-width: 200px;"
                 value="<?= isset($_GET['dni']) ? esc($_GET['dni']) : '' ?>">
+
             <button class="btn btn-primary" type="submit">Buscar</button>
 
-            <?php if (isset($_GET['dni']) && $_GET['dni'] !== ''): ?>
-            <a href="<?= base_url('verVentas') ?>" class="btn btn-success">Mostrar Todas</a>
+            <?php if (
+            (isset($_GET['dni']) && $_GET['dni'] !== '') || 
+            (isset($_GET['fecha_desde']) && $_GET['fecha_desde'] !== '') ||
+            (isset($_GET['fecha_hasta']) && $_GET['fecha_hasta'] !== '')
+        ): ?>
+            <a href="<?= base_url('verVentas') ?>" class="btn btn-success ms-2">Mostrar Todas</a>
             <?php endif; ?>
         </div>
     </form>
+
     <table class="table table-bordered table-hover align-middle">
         <thead class="table-dark">
             <tr>
@@ -29,10 +47,22 @@
             $i = 1;
             $ventasAgrupadas = [];
             $dniFiltro = isset($_GET['dni']) ? trim($_GET['dni']) : '';
+            $fechaDesde = isset($_GET['fecha_desde']) ? trim($_GET['fecha_desde']) : '';
+            $fechaHasta = isset($_GET['fecha_hasta']) ? trim($_GET['fecha_hasta']) : '';
             foreach ($ventas as $venta) {
                 if ($dniFiltro !== '' && strpos($venta['cliente_dni'], $dniFiltro) === false) {
                     continue; 
                 }
+                $fechaVenta = substr($venta['ventas_fecha'], 0, 10);
+
+    // Filtrar por rango de fechas
+    if ($fechaDesde !== '' && $fechaVenta < $fechaDesde) {
+        continue;
+    }
+
+    if ($fechaHasta !== '' && $fechaVenta > $fechaHasta) {
+        continue;
+    }
                 $ventasAgrupadas[$venta['ventas_id']]['cliente'] = $venta['cliente_nombre'] . ' ' . $venta['cliente_apellido'];
                 $ventasAgrupadas[$venta['ventas_id']]['correo'] = $venta['cliente_correo'];
                 $ventasAgrupadas[$venta['ventas_id']]['dni'] = $venta['cliente_dni'];

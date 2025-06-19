@@ -33,6 +33,8 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/estilo_inicio.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/estilo_crearcuenta.css') ?>">
 
+
+
 </head>
 
 <body>

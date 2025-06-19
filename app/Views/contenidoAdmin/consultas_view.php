@@ -30,16 +30,17 @@
             </tr>
         </thead>
         <tbody>
-            <?php $i = 1; 
-                $correoFiltro = isset($_GET['correo']) ? trim($_GET['correo']) : '';
-            ?>
+            <?php $i = 1;
+$correoFiltro = isset($_GET['correo']) ? trim($_GET['correo']) : '';
+?>
             <?php foreach ($consultas as $row): ?>
             <?php 
-            if ($correoFiltro && stripos($row['correo'], $correoFiltro) === false) {
-                    continue;
-                }?>
+    if ($correoFiltro && stripos($row['correo'], $correoFiltro) === false) {
+        continue;
+    }
+?>
             <tr>
-                <td><?= $i++ ?></td>
+                <td><?= $i ?></td>
                 <td><?= esc($row['apellido']) ?></td>
                 <td><?= esc($row['nombre']) ?></td>
                 <td><?= esc($row['correo']) ?></td>
@@ -47,13 +48,17 @@
                 <td><?= esc($row['num_orden']) ?></td>
                 <td><?= esc($row['plataforma']) ?></td>
                 <td>
-                    <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal"
-                        data-bs-target="#modalConsulta<?= $i ?>">
+                    <button type="button" class="btn btn-info btn-sm ver-btn" data-bs-toggle="modal"
+                        data-bs-target="#modalConsulta<?= $i ?>" data-icon-id="iconoVisto<?= $i ?>">
                         Ver
                     </button>
-                </td>
+                    <img id="iconoVisto<?= $i ?>" src="<?= base_url('assets/img/visto.png') ?>" alt="Leído"
+                        class="icono-visto ms-2 d-none" style="width: 20px; height: 20px;" title="Mensaje leído">
 
+                </td>
             </tr>
+
+            <!-- Modal -->
             <div class="modal fade" id="modalConsulta<?= $i ?>" tabindex="-1" aria-labelledby="modalLabel<?= $i ?>"
                 aria-hidden="true">
                 <div class="modal-dialog">
@@ -78,7 +83,28 @@
                     </div>
                 </div>
             </div>
-            <?php endforeach; ?>
+
+            <?php $i++; endforeach; ?>
+
         </tbody>
     </table>
 </div>
+<script>
+console.log("vistoDeConsultas.js cargado correctamente");
+document.addEventListener('DOMContentLoaded', function() {
+    const modals = document.querySelectorAll('[id^="modalConsulta"]');
+
+    modals.forEach(modal => {
+        modal.addEventListener('shown.bs.modal', function() {
+            const modalId = modal.id;
+            const btn = document.querySelector(`button[data-bs-target="#${modalId}"]`);
+            if (btn) {
+                const icono = btn.parentElement.querySelector('.icono-visto');
+                if (icono) {
+                    icono.classList.remove('d-none');
+                }
+            }
+        });
+    });
+});
+</script>
