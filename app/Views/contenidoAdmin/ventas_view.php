@@ -31,7 +31,7 @@
             $dniFiltro = isset($_GET['dni']) ? trim($_GET['dni']) : '';
             foreach ($ventas as $venta) {
                 if ($dniFiltro !== '' && strpos($venta['cliente_dni'], $dniFiltro) === false) {
-                    continue; // Salta si no coincide con el filtro
+                    continue; 
                 }
                 $ventasAgrupadas[$venta['ventas_id']]['cliente'] = $venta['cliente_nombre'] . ' ' . $venta['cliente_apellido'];
                 $ventasAgrupadas[$venta['ventas_id']]['correo'] = $venta['cliente_correo'];

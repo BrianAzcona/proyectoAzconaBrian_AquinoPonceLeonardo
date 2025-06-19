@@ -45,10 +45,10 @@ window.addEventListener('DOMContentLoaded', function() {
             <p class="text-muted text-center mb-4">Accede a tu cuenta para continuar.</p>
             <form action="<?= base_url ('cliente/iniciarSesion') ?>" method="POST">
 
-                <?php if (isset($validation)): ?>
+                <?php if (session('validation')): ?>
                 <div class="alert alert-danger">
                     <ul>
-                        <?php foreach ($validation->getErrors() as $error): ?>
+                        <?php foreach (session('validation')->getErrors() as $error): ?>
                         <li><?= esc($error) ?></li>
                         <?php endforeach; ?>
                     </ul>
@@ -57,11 +57,13 @@ window.addEventListener('DOMContentLoaded', function() {
 
                 <div class="form-group mb-3">
                     <label for="email" class="form-label">Correo Electrónico:</label>
-                    <input type="email" id="cliente_correo" name="cliente_correo" class="form-control">
+                    <input type="email" id="cliente_correo" name="cliente_correo" class="form-control"
+                        value="<?= old('cliente_correo') ?>">
                 </div>
                 <div class="form-group mb-4">
                     <label for="password" class="form-label">Contraseña:</label>
-                    <input type="password" id="cliente_password" name="cliente_password" class="form-control">
+                    <input type="password" id="cliente_password" name="cliente_password" class="form-control"
+                        value="<?= old('cliente_password') ?>">
                 </div>
                 <button type="submit" class="btn btn-primary fw-bold w-100">Iniciar Sesión</button>
             </form>

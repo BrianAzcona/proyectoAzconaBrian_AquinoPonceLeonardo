@@ -89,11 +89,7 @@ class ClienteController extends BaseController
         $data = $this->request->getPost(array_keys($validation->getRules()));
 
         if (! $validation->run($data)) {
-            $data['titulo'] = "CrearCuenta ";
-            return view('plantillas/header_view.php', $data)
-                . view("plantillas/nav_view.php")
-                . view("contenido/crearcuenta.php", ['validation' => $validation])
-                . view("plantillas/footer_view.php");
+            return redirect()->back()->withInput()->with('validation', $validation);
         }
         
         $validData = $validation->getValidated();
@@ -143,11 +139,7 @@ class ClienteController extends BaseController
     $data = $request->getPost(['cliente_correo', 'cliente_password']);
 
     if (! $validation->run($data)) {
-        $data['titulo'] = "Iniciar Sesión";
-        return view('plantillas/header_view.php', $data)
-            . view("plantillas/nav_view.php")
-            . view("contenido/inicio.php", ['validation' => $validation])
-            . view("plantillas/footer_view.php");
+        return redirect()->back()->withInput()->with('validation', $validation);
     }
 
     $model = new ClienteModel();
@@ -155,14 +147,10 @@ class ClienteController extends BaseController
 
     if (! $cliente || ! password_verify($data['cliente_password'], $cliente['cliente_password'])) {
         $validation->setError('cliente_correo', 'Correo o contraseña incorrectos.');
-        $data['titulo'] = "Iniciar Sesión";
-        return view('plantillas/header_view.php', $data)
-            . view("plantillas/nav_view.php")
-            . view("contenido/inicio.php", ['validation' => $validation])
-            . view("plantillas/footer_view.php");
+        return redirect()->back()->withInput()->with('validation', $validation);
     }
 
-    // Guardar datos en sesión
+    
     session()->set([
         'cliente_id'      => $cliente['cliente_id'],
         'cliente_nombre'  => $cliente['cliente_nombre'],
@@ -171,14 +159,14 @@ class ClienteController extends BaseController
         'cliente_correo'  => $cliente['cliente_correo'],
         'perfil_id'       => $cliente['perfil_id'],
         'isLoggedIn'      => true,
-        'nombre'          => $cliente['cliente_nombre'] // útil para admin
+        'nombre'          => $cliente['cliente_nombre']
     ]);
 
-    // Redirigir según perfil
+    
     if ($cliente['perfil_id'] == 1) {
-        return redirect()->to('admin/inicioAdmin'); // Ruta del panel de administrador
+        return redirect()->to('admin/inicioAdmin'); 
     } else {
-        return redirect()->to('cliente/inicioCliente'); // Ruta de usuario común
+        return redirect()->to('cliente/inicioCliente'); 
     }
 }
 

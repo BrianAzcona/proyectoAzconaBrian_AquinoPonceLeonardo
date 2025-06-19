@@ -9,10 +9,10 @@
             <p class="text-muted text-center mb-4">Regístrate para empezar a disfrutar de nuestros servicios.</p>
             <form action="<?= base_url('crearCuenta') ?>" method="POST">
 
-                <?php if (isset($validation)): ?>
+                <?php if (session('validation')): ?>
                 <div class="alert alert-danger">
                     <ul>
-                        <?php foreach ($validation->getErrors() as $error): ?>
+                        <?php foreach (session('validation')->getErrors() as $error): ?>
                         <li><?= esc($error) ?></li>
                         <?php endforeach; ?>
                     </ul>
@@ -24,65 +24,74 @@
                 <!-- Nombre Completo -->
                 <div class="form-group mb-3">
                     <label for="nombre" class="form-label fw-semibold" style="color: black;">Nombre:</label>
-                    <input type="text" id="cliente_nombre" name="cliente_nombre" class="form-control" >
+                    <input type="text" id="cliente_nombre" name="cliente_nombre" class="form-control"
+                        value="<?= old('cliente_nombre') ?>">
                 </div>
                 <!-- Apellido -->
                 <div class="form-group mb-3">
                     <label for="apellido" class="form-label fw-semibold" style="color: black;">Apellido:</label>
-                    <input type="text" id="cliente_apellido" name="cliente_apellido" class="form-control" >
+                    <input type="text" id="cliente_apellido" name="cliente_apellido" class="form-control"
+                        value="<?= old('cliente_apellido') ?>">
 
                 </div>
                 <!-- DNI -->
                 <div class="form-group mb-3">
                     <label for="dni" class="form-label fw-semibold" style="color: black;">DNI:</label>
-                    <input type="text" id="cliente_dni" name="cliente_dni" class="form-control" >
+                    <input type="text" id="cliente_dni" name="cliente_dni" class="form-control"
+                        value="<?= old('cliente_dni') ?>">
 
                 </div>
                 <!-- Correo Electrónico -->
                 <div class="form-group mb-3">
                     <label for="email" class="form-label fw-semibold" style="color: black;">Correo Electrónico:</label>
-                    <input type="email" id="cliente_correo" name="cliente_correo" class="form-control" >
+                    <input type="email" id="cliente_correo" name="cliente_correo" class="form-control"
+                        value="<?= old('cliente_correo') ?>">
 
                 </div>
                 <!-- Contraseña -->
                 <div class="form-group mb-4">
                     <label for="password" class="form-label fw-semibold" style="color: black;">Contraseña:</label>
-                    <input type="password" id="cliente_password" name="cliente_password" class="form-control" >
+                    <input type="text" id="cliente_password" name="cliente_password" class="form-control"
+                        value="<?= old('cliente_password') ?>">
 
                 </div>
                 <!-- Repetir Contraseña -->
                 <div class="form-group mb-4">
                     <label for="confirm-password" class="form-label fw-semibold" style="color: black;">Repetir
                         Contraseña:</label>
-                    <input type="password" id="cliente_repassword" name="cliente_repassword" class="form-control"
-                        >
+                    <input type="text" id="cliente_repassword" name="cliente_repassword" class="form-control"
+                        value="<?= old('cliente_repassword') ?>">
 
                 </div>
                 <!-- País -->
                 <div class="form-group mb-3">
                     <label for="pais" class="form-label fw-semibold" style="color: black;">País:</label>
-                    <input type="text" id="cliente_pais" name="cliente_pais" class="form-control" >
+                    <input type="text" id="cliente_pais" name="cliente_pais" class="form-control"
+                        value="<?= old('cliente_pais') ?>">
 
                 </div>
 
                 <!-- Provincia -->
                 <div class="form-group mb-3">
                     <label for="provincia" class="form-label fw-semibold" style="color: black;">Provincia:</label>
-                    <input type="text" id="cliente_provincia" name="cliente_provincia" class="form-control" >
+                    <input type="text" id="cliente_provincia" name="cliente_provincia" class="form-control"
+                        value="<?= old('cliente_provincia') ?>">
 
                 </div>
 
                 <!-- Ciudad -->
                 <div class="form-group mb-3">
                     <label for="ciudad" class="form-label fw-semibold" style="color: black;">Ciudad:</label>
-                    <input type="text" id="cliente_ciudad" name="cliente_ciudad" class="form-control" >
+                    <input type="text" id="cliente_ciudad" name="cliente_ciudad" class="form-control"
+                        value="<?= old('cliente_ciudad') ?>">
 
                 </div>
 
                 <!-- Teléfono -->
                 <div class="form-group mb-3">
                     <label for="telefono" class="form-label fw-semibold" style="color: black;">Teléfono:</label>
-                    <input type="text" id="cliente_telefono" name="cliente_telefono" class="form-control" >
+                    <input type="text" id="cliente_telefono" name="cliente_telefono" class="form-control"
+                        value="<?= old('cliente_telefono') ?>">
 
                 </div>
 

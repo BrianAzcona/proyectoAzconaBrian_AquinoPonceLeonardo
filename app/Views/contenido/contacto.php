@@ -34,52 +34,69 @@ window.addEventListener('DOMContentLoaded', function() {
                 <h3 class="mb-4 fw-bold text-primary">Comunícate con Soporte</h3>
                 <p class="text-muted mb-4">Completa el siguiente formulario y nuestro equipo se pondrá en contacto
                     contigo a la brevedad.</p>
+                <?php $session = session(); ?>
+
                 <form action="<?= base_url('consulta') ?>" method="POST">
 
-                    <?php if (isset($validation)): ?>
+                    <?php if (session('validation')): ?>
                     <div class="alert alert-danger">
                         <ul>
-                            <?php foreach ($validation->getErrors() as $error): ?>
+                            <?php foreach (session('validation')->getErrors() as $error): ?>
                             <li><?= esc($error) ?></li>
                             <?php endforeach; ?>
                         </ul>
                     </div>
                     <?php endif; ?>
 
+                    <?php if ($session->has('cliente_id')): ?>
+                    <!-- Cliente logueado: enviamos datos por campos ocultos -->
+                    <input type="hidden" name="apellido" value="<?= esc($session->get('cliente_apellido')) ?>">
+                    <input type="hidden" name="nombre" value="<?= esc($session->get('cliente_nombre')) ?>">
+                    <input type="hidden" name="correo" value="<?= esc($session->get('cliente_correo')) ?>">
+                    <?php else: ?>
+                    <!-- Visitante: mostrar los campos para que ingrese los datos -->
                     <div class="form-group mb-3 text-start">
                         <label for="apellido" class="form-label fw-semibold" style="color: black">Apellido:</label>
-                        <input type=" text" id="apellido" name="apellido" class="form-control">
+                        <input type="text" id="apellido" name="apellido" class="form-control"
+                            value="<?= old('apellido') ?>">
                     </div>
                     <div class="form-group mb-3 text-start">
                         <label for="nombre" class="form-label fw-semibold" style="color: black">Nombre:</label>
-                        <input type=" text" id="nombre" name="nombre" class="form-control">
+                        <input type="text" id="nombre" name="nombre" class="form-control" value="<?= old('nombre') ?>">
                     </div>
                     <div class="form-group mb-3 text-start">
                         <label for="email" class="form-label fw-semibold" style="color: black">Correo
                             Electrónico:</label>
-                        <input type="email" id="correo" name="correo" class="form-control">
+                        <input type="email" id="correo" name="correo" class="form-control" value="<?= old('correo') ?>">
                     </div>
+                    <?php endif; ?>
+
+                    <!-- El resto de campos siempre visibles -->
                     <div class="form-group mb-3 text-start">
                         <label for="asunto" class="form-label fw-semibold" style="color: black">Asunto:</label>
-                        <input type="text" id="asunto" name="asunto" class="form-control">
+                        <input type="text" id="asunto" name="asunto" class="form-control" value="<?= old('asunto') ?>">
                     </div>
                     <div class="form-group mb-3 text-start">
                         <label for="numeroOrden" class="form-label fw-semibold" style="color: black">Número de
                             orden(opcional):</label>
-                        <input type="text" id="num_orden" name="num_orden" class="form-control">
+                        <input type="text" id="num_orden" name="num_orden" class="form-control"
+                            value="<?= old('num_orden') ?>">
                     </div>
                     <div class="form-group mb-3 text-start">
                         <label for="plataforma" class="form-label fw-semibold"
                             style="color: black">Plataforma(opcional):</label>
-                        <input type="text" id="plataforma" name="plataforma" class="form-control">
+                        <input type="text" id="plataforma" name="plataforma" class="form-control"
+                            value="<?= old('plataforma') ?>">
                     </div>
                     <div class="form-group mb-4 text-start">
                         <label for="mensaje" class="form-label fw-semibold" style="color: black">Descripción del
                             Problema:</label>
-                        <textarea id="consulta" name="consulta" class="consulta" rows="5"></textarea>
+                        <textarea id="consulta" name="consulta" class="consulta"
+                            rows="5"><?= old('consulta') ?></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary w-100 fw-bold">Enviar Mensaje a Soporte</button>
                 </form>
+
             </div>
         </div>
 

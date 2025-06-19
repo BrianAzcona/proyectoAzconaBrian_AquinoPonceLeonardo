@@ -63,11 +63,7 @@ class MensajeController extends BaseController
         $data = $this->request->getPost(array_keys($validation->getRules()));
 
         if (! $validation->run($data)) {
-            $data['titulo'] = "Contacto ";
-            return view('plantillas/header_view.php', $data)
-                . view("plantillas/nav_view.php")
-                . view("contenido/contacto.php", ['validation' => $validation])
-                . view("plantillas/footer_view.php");
+            return redirect()->back()->withInput()->with('validation', $validation);
         }
 
         // Aquí podés guardar los datos o hacer lo que necesites con $data
