@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-06-2025 a las 18:05:11
+-- Tiempo de generación: 19-06-2025 a las 21:03:30
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -44,7 +44,8 @@ INSERT INTO `tab_categoria` (`categoria_id`, `categoria_descripcion`) VALUES
 (14, 'Roles'),
 (15, 'Simulacion'),
 (16, 'Supervivencia'),
-(17, 'Deportes');
+(17, 'Deportes'),
+(18, 'gift card');
 
 -- --------------------------------------------------------
 
@@ -113,7 +114,9 @@ INSERT INTO `tab_detalleventa` (`detalleVenta_id`, `ventas_id`, `juego_id`, `det
 (25, 21, 32, 1, 36521),
 (26, 21, 30, 1, 23526),
 (27, 22, 17, 1, 9005),
-(28, 23, 19, 1, 30523);
+(28, 23, 19, 1, 30523),
+(29, 24, 18, 1, 8500),
+(30, 24, 17, 2, 9005);
 
 -- --------------------------------------------------------
 
@@ -138,13 +141,13 @@ CREATE TABLE `tab_juegos` (
 --
 
 INSERT INTO `tab_juegos` (`juego_id`, `juego_nombre`, `juego_plataforma`, `juego_descripcion`, `juego_stock`, `juego_precio`, `juego_imagen`, `categoria_id`, `juego_estado`) VALUES
-(17, 'Tales of Arise', 'pc', 'animaciones epicas', 38, 9005, '1749601419_f65c14066201c115c7e8.jpg', 11, 1),
-(18, 'Control', 'pc', 'poderes telequineticos ', 70, 8500, '1749601452_52206b9d03c1e4baf273.jpeg', 11, 1),
-(19, 'UNCHARTED', 'ps4', 'busqueda de tesoros antiguos', 86, 30523, '1749601513_3cf15bc28bcbc233497e.jpg', 11, 1),
+(17, 'Tales of Arise', 'pc', 'animaciones epicas', 0, 9005, '1749601419_f65c14066201c115c7e8.jpg', 13, 1),
+(18, 'Control', 'pc', 'poderes telequineticos ', 69, 8500, '1749601452_52206b9d03c1e4baf273.jpeg', 11, 1),
+(19, 'UNCHARTED', 'ps4', 'busqueda de tesoros antiguos', 343, 30523, '1749601513_3cf15bc28bcbc233497e.jpg', 11, 1),
 (20, 'Outlast', 'ps4', 'terror y busqueda de la verdad', 47, 9585, '1749601566_b13dfbd84f84f25a0b25.jpg', 10, 1),
 (21, 'Outlast II', 'pc', 'secta y ocultismos ', 68, 8548, '1749601617_65510a6a3398c73fab85.jpg', 10, 1),
 (22, 'The Outlast Trials', 'ps4', 'multijugador de terror', 100, 23655, '1749601671_84392e06d3096af03aa4.jpg', 10, 1),
-(23, 'Phasmophobia', 'xbox', 'suspenso sin armas', 74, 5866, '1749601724_2dfca74c03dff28ebdbf.jpeg', 10, 1),
+(23, 'Phasmophobia', 'xbox', 'suspenso sin armas', 74, 5866, '1749601724_2dfca74c03dff28ebdbf.jpeg', 10, 0),
 (24, 'Silent Hill 2', 'ps5', 'busqueda de personas perdidas en lugares desconocidos', 96, 55236, '1749601766_916a8a7f60827aff0329.jpg', 10, 1),
 (25, 'Forza Horizon 5', 'ps5', 'carreras con paisajes reales', 12, 23657, '1749601877_32fcc9c7b8a4aabc6eff.jpeg', 12, 1),
 (26, 'Need for Speed Unbound', 'pc', 'Juego clasico', 23, 10252, '1749601924_29d5603ce9a7cc207d53.jpg', 12, 1),
@@ -153,7 +156,21 @@ INSERT INTO `tab_juegos` (`juego_id`, `juego_nombre`, `juego_plataforma`, `juego
 (29, 'Trackmania 2 Canyon', 'steam', 'juego con acrobacias extremas', 58, 2635, '1749602065_85f4d5ea4329edd8e878.jpeg', 12, 1),
 (30, 'Horizon Zero Dawn Remastered', 'pc', 'juego futuristico', 653, 23526, '1749617581_bfa4077322ffac04f4a9.jpg', 11, 1),
 (32, 'Minecraft', 'Steam', 'juego de supervivencia multijugador pixeleado', 595, 36521, '1749768202_02e03b45867225041674.jpg', 16, 1),
-(33, 'Red Dead Redemption 2', 'pc', 'Juego ambientado en el viejo oeste', 50, 23521, '1749846184_1b5d97f5ef5d0b040001.jpeg', 11, 1);
+(33, 'Red Dead Redemption 2', 'pc', 'Juego ambientado en el viejo oeste', 50, 23521, '1749846184_1b5d97f5ef5d0b040001.jpeg', 11, 1),
+(34, 'the Last of Us', 'pc', 'juego de supervivencia y aventura ', 60, 40584, '1750338112_049989e6ec4b732e430a.jpg', 11, 1),
+(35, 'The Elder Scrolls IV Remastered', 'pc', 'juego de supervivencia ', 110, 58654, '1750338307_78e92cbf553bb4da4354.jpg', 14, 1),
+(36, 'God of War ', 'pc', 'Sigue las historias de Kratos, un guerrero espartano que, tras vengarse de los dioses del Olimpo, se encuentra en el reino nórdico buscando redención y tratando de ser un padre para su hijo Atreus', 150, 23484, '1750338427_dbb3ff7944650635e6aa.jpeg', 11, 1),
+(37, 'Dragon Ball Kakarot', 'xbox', 'juego de acción y aventura se recrea la historia de Goku y sus Amigos ', 200, 59612, '1750338721_e1c2f11044ec058b2a0f.webp', 11, 1),
+(38, 'Cuphead', 'ps4', 'es un videojuego de plataformas y disparos en 2D, conocido por su estilo visual inspirado en las caricaturas de los años 30 y su dificultad desafiante', 165, 21452, '1750339060_f6da2f5dcfdf5109dc51.webp', 11, 1),
+(39, 'Dark Souls Remastered', 'pc', 'es un videojuego de rol de acción y fantasía oscura en tercera persona que se centra en la exploración de entornos interconectados y la lucha contra enemigos desafiantes', 180, 12854, '1750339150_2f00eb73add8aab1345f.jpg', 13, 1),
+(40, 'Resident Evil 3 ', 'ps4', 'es un videojuego de terror y supervivencia', 230, 38895, '1750339251_8f03b4338b85202b9cf0.webp', 10, 1),
+(41, 'Netflix', 'pc', 'gift card de $10USD', 50, 12368, '1750340073_a08979df79926b4591de.png', 18, 1),
+(42, 'Spotify', 'pc', 'Gift card $3usd', 50, 12368, '1750340147_8d5cfa360fa8f7404851.jpg', 18, 1),
+(43, 'Xbox gamePass', 'pc ', 'gift card $8USD', 32, 10000, '1750340197_739994dcbc43852a8085.png', 18, 1),
+(44, 'Disney PLus', 'pc ', 'gift card  $5USD', 45, 7545, '1750340267_2f32abf1887b97eaf3d9.png', 18, 1),
+(45, 'Steam', 'pc ', 'gift card $5USD', 48, 7545, '1750340315_8161938ea23b38f877e2.jpg', 18, 1),
+(46, 'HBO MAX', 'pc ', 'gift card $11USD', 48, 12456, '1750340713_77813fbf80b5a69e4165.jpg', 18, 1),
+(47, 'Crunchyroll', 'pc', 'gitf card $7USD', 35, 9568, '1750340953_62d62088c07c19f0fd9e.webp', 18, 1);
 
 -- --------------------------------------------------------
 
@@ -223,7 +240,8 @@ INSERT INTO `tab_ventas` (`ventas_id`, `cliente_id`, `ventas_fecha`) VALUES
 (20, 5, '2025-06-13'),
 (21, 6, '2025-06-15'),
 (22, 5, '2025-06-16'),
-(23, 5, '2025-06-17');
+(23, 5, '2025-06-17'),
+(24, 5, '2025-06-19');
 
 --
 -- Índices para tablas volcadas
@@ -279,7 +297,7 @@ ALTER TABLE `tab_ventas`
 -- AUTO_INCREMENT de la tabla `tab_categoria`
 --
 ALTER TABLE `tab_categoria`
-  MODIFY `categoria_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `categoria_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `tab_clientes`
@@ -291,13 +309,13 @@ ALTER TABLE `tab_clientes`
 -- AUTO_INCREMENT de la tabla `tab_detalleventa`
 --
 ALTER TABLE `tab_detalleventa`
-  MODIFY `detalleVenta_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `detalleVenta_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de la tabla `tab_juegos`
 --
 ALTER TABLE `tab_juegos`
-  MODIFY `juego_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `juego_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT de la tabla `tab_mensaje`
@@ -315,7 +333,7 @@ ALTER TABLE `tab_perfil`
 -- AUTO_INCREMENT de la tabla `tab_ventas`
 --
 ALTER TABLE `tab_ventas`
-  MODIFY `ventas_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `ventas_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
