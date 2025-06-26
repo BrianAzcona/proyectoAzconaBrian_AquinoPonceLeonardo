@@ -15,7 +15,7 @@ $routes->get('comercializacion', 'Home::comercializacion');
 
 $routes->get('productos', 'Home::producto');
 
-$routes->get('productos/categoria/(:any)', 'Home::productosAside/$1', ['filter' => 'filtroCliente']);
+$routes->get('productos/categoria/(:any)', 'Home::productosAside/$1');
 
 
 $routes->get('Ayuda', 'Home::terminosYcondiciones');
